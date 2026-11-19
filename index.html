@@ -583,14 +583,14 @@ const grid=document.getElementById('grid');
 const esc=s=>s.replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));
 function render(){const es=LANG==='es';
 grid.innerHTML=P.map((p,i)=>{const nm=es?p.es[0]:p.name,cp=es?p.es[1]:p.comp,tx=es?p.es[2]:p.txt;return `<article class="card" data-c="${p.c}">
-  <div class="plate"><img id="pi${i}" src="img/${p.img[0]}.jpg" alt="${esc(nm)}" loading="lazy" width="640" height="640"><span class="hole">${p.code}</span></div>
+  <div class="plate"><img id="pi${i}" src="img/${p.img[0]}.jpg?v=2" alt="${esc(nm)}" loading="lazy" width="640" height="640"><span class="hole">${p.code}</span></div>
   <div class="body"><h3>${esc(nm)}</h3><div class="comp">${esc(cp)}</div><p>${esc(tx)}</p>
-  ${p.img.length>1?`<div class="swatches">${p.img.map((m,j)=>`<button class="sw" type="button" aria-label="${es?'Color':'Colorway'} ${j+1}" aria-pressed="${j===0}" data-i="${i}" data-m="${m}"><img src="img/${m}.jpg" alt="" loading="lazy"></button>`).join('')}</div>`:''}
+  ${p.img.length>1?`<div class="swatches">${p.img.map((m,j)=>`<button class="sw" type="button" aria-label="${es?'Color':'Colorway'} ${j+1}" aria-pressed="${j===0}" data-i="${i}" data-m="${m}"><img src="img/${m}.jpg?v=2" alt="" loading="lazy"></button>`).join('')}</div>`:''}
   </div></article>`}).join('');
 const f=(document.querySelector('.tab[aria-pressed="true"]')||{}).dataset; const fl=f?f.f:'all'; grid.querySelectorAll('.card').forEach(c=>c.hidden=!(fl==='all'||c.dataset.c===fl));}
 render();
 ['all','men','women','thermal'].forEach(k=>{document.getElementById('n-'+k).textContent=k==='all'?P.length:P.filter(p=>p.c===k).length});
-grid.addEventListener('click',e=>{const b=e.target.closest('.sw');if(!b)return;document.getElementById('pi'+b.dataset.i).src='img/'+b.dataset.m+'.jpg';b.parentNode.querySelectorAll('.sw').forEach(s=>s.setAttribute('aria-pressed',s===b))});
+grid.addEventListener('click',e=>{const b=e.target.closest('.sw');if(!b)return;document.getElementById('pi'+b.dataset.i).src='img/'+b.dataset.m+'.jpg?v=2';b.parentNode.querySelectorAll('.sw').forEach(s=>s.setAttribute('aria-pressed',s===b))});
 document.querySelectorAll('.tab').forEach(t=>t.addEventListener('click',()=>{
   document.querySelectorAll('.tab').forEach(x=>x.setAttribute('aria-pressed',x===t));
   const f=t.dataset.f; grid.querySelectorAll('.card').forEach(c=>c.hidden=!(f==='all'||c.dataset.c===f));
