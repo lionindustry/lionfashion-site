@@ -1,0 +1,641 @@
+<!doctype html>
+<html lang="en" data-brand="champagne">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lion Fashion · Underwear OEM &amp; ODM</title>
+<meta property="og:type" content="website">
+<meta property="og:title" content="Lion Fashion · Underwear OEM & ODM">
+<meta property="og:description" content="Men's, women's and thermal underwear made to your spec in Zhongshan, China. OEM, ODM and in-stock programs from Shanghai Lion Industry.">
+<meta property="og:image" content="img/f-hanging.jpg">
+<meta name="theme-color" content="#1E1D21">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="OEM and ODM underwear manufacturing for brands: men's, women's and thermal underwear from an integrated knitting-to-packing factory in Zhongshan, China. A Shanghai Lion Industry business.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout concept: a garment tech pack. Hang-tag product cards, spec rows in mono, factory cobalt (the blue totes on the hanging line) as the one accent. */
+:root{
+  --paper:#F4F4F7; --paper-2:#E9E9EF; --ink:#151829; --muted:#5B5E70; --line:#D6D6DF;
+  --accent:#2443C9; --accent-ink:#FFFFFF; --plate:#EEEFF2; --tag:#FFFFFF;
+  --lbl:#151829; --lbl-fg:#F4F4F7; --lbl-f:#8C9CFF; --lbl-edge:transparent;
+  --f-display:"Poppins", "Helvetica Neue", Arial, sans-serif;
+  --f-body:"Hanken Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --wrap:1180px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#0E1020; --paper-2:#161931; --ink:#ECECF3; --muted:#A3A6B9; --line:#2A2E47;
+  --accent:#8C9CFF; --accent-ink:#0E1020; --plate:#E7E8EC; --tag:#151831; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#0E1020; --paper-2:#161931; --ink:#ECECF3; --muted:#A3A6B9; --line:#2A2E47;
+  --accent:#8C9CFF; --accent-ink:#0E1020; --plate:#E7E8EC; --tag:#151831; color-scheme:dark}
+
+*{box-sizing:border-box}
+html{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0}
+img{max-width:100%}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--paper)}
+a{color:inherit}
+.wrap{max-width:var(--wrap);margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--f-display);font-weight:600;line-height:1.12;margin:0;text-wrap:balance;letter-spacing:-.02em}
+h2{font-size:clamp(2rem,4.2vw,3.1rem)}
+h3{font-size:1.35rem}
+p{margin:0}
+.eyebrow{font-family:var(--f-mono);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.lede{color:var(--muted);max-width:62ch;font-size:1.06rem}
+.mono{font-family:var(--f-mono)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+
+:root[data-brand="champagne"]{--accent:#8A6726;--accent-ink:#FFFFFF;--lbl:#1E1D21;--lbl-fg:#F2EBDD;--lbl-f:#D4B06A;--lbl-edge:transparent;--ink:#1E1D21;--paper:#F6F2EB;--paper-2:#EDE6DA;--line:#DDD3C4;--muted:#6A6258;--plate:#EFE9DF;--tag:#FFFCF7}
+@media (prefers-color-scheme: dark){:root[data-brand="champagne"]:not([data-theme="light"]){--accent:#D4B06A;--accent-ink:#1E1D21;--lbl-edge:transparent;--paper:#17140F;--paper-2:#221D17;--line:#3A332A;--muted:#B3A894;--ink:#F2EBDD;--plate:#ECE5D9;--tag:#1E1A14}}
+:root[data-theme="dark"][data-brand="champagne"]{--accent:#D4B06A;--accent-ink:#1E1D21;--lbl-edge:transparent;--paper:#17140F;--paper-2:#221D17;--line:#3A332A;--muted:#B3A894;--ink:#F2EBDD;--plate:#ECE5D9;--tag:#1E1A14}
+:root[data-brand="rosewood"]{--accent:#8A2A40;--accent-ink:#FFFFFF;--lbl:#5B1E2D;--lbl-fg:#F7E6E3;--lbl-f:#F2A9A6;--lbl-edge:transparent;--ink:#2A1A1E;--paper:#F6F2EB;--paper-2:#EDE6DA;--line:#DDD3C4;--muted:#6A6258;--plate:#EFE9DF;--tag:#FFFCF7}
+@media (prefers-color-scheme: dark){:root[data-brand="rosewood"]:not([data-theme="light"]){--accent:#F2A9A6;--accent-ink:#1A0E12;--lbl-edge:transparent;--paper:#17140F;--paper-2:#221D17;--line:#3A332A;--muted:#B3A894;--ink:#F2EBDD;--plate:#ECE5D9;--tag:#1E1A14}}
+:root[data-theme="dark"][data-brand="rosewood"]{--accent:#F2A9A6;--accent-ink:#1A0E12;--lbl-edge:transparent;--paper:#17140F;--paper-2:#221D17;--line:#3A332A;--muted:#B3A894;--ink:#F2EBDD;--plate:#ECE5D9;--tag:#1E1A14}
+:root[data-brand="sage"]{--accent:#1F5C50;--accent-ink:#FFFFFF;--lbl:#163C36;--lbl-fg:#EEF3EE;--lbl-f:#A9CDB5;--lbl-edge:transparent}
+@media (prefers-color-scheme: dark){:root[data-brand="sage"]:not([data-theme="light"]){--accent:#A9CDB5;--accent-ink:#0E1F1C;--lbl-edge:transparent}}
+:root[data-theme="dark"][data-brand="sage"]{--accent:#A9CDB5;--accent-ink:#0E1F1C;--lbl-edge:transparent}
+:root[data-brand="ivory"]{--accent:#B8322A;--accent-ink:#FFFFFF;--lbl:#F1ECE2;--lbl-fg:#1B2A4A;--lbl-f:#C8372D;--lbl-edge:#D6D6DF;--ink:#1B2A4A;--paper:#F6F2EB;--paper-2:#EDE6DA;--line:#DDD3C4;--muted:#6A6258;--plate:#EFE9DF;--tag:#FFFCF7}
+@media (prefers-color-scheme: dark){:root[data-brand="ivory"]:not([data-theme="light"]){--accent:#F08A80;--accent-ink:#1A0E0C;--lbl-edge:transparent;--paper:#17140F;--paper-2:#221D17;--line:#3A332A;--muted:#B3A894;--ink:#F2EBDD;--plate:#ECE5D9;--tag:#1E1A14}}
+:root[data-theme="dark"][data-brand="ivory"]{--accent:#F08A80;--accent-ink:#1A0E0C;--lbl-edge:transparent;--paper:#17140F;--paper-2:#221D17;--line:#3A332A;--muted:#B3A894;--ink:#F2EBDD;--plate:#ECE5D9;--tag:#1E1A14}
+:root[data-brand="mono"]{--accent:#0B0B0C;--accent-ink:#FFFFFF;--lbl:#0B0B0C;--lbl-fg:#FFFFFF;--lbl-f:#FFFFFF;--lbl-edge:transparent}
+@media (prefers-color-scheme: dark){:root[data-brand="mono"]:not([data-theme="light"]){--accent:#FFFFFF;--accent-ink:#0B0B0C;--lbl-edge:#3A3E58}}
+:root[data-theme="dark"][data-brand="mono"]{--accent:#FFFFFF;--accent-ink:#0B0B0C;--lbl-edge:#3A3E58}
+.lf{display:inline-flex;flex:none;width:40px;height:31px;padding:3px;box-sizing:border-box;background:var(--lbl);border-radius:2px;box-shadow:0 0 0 1px var(--lbl-edge)}
+.lf>span{flex:1;display:flex;align-items:center;justify-content:center;border:1.3px dashed var(--lbl-fg);font:700 13px/1 var(--f-display);letter-spacing:-.04em;color:var(--lbl-fg)}
+.lf .f{color:var(--lbl-f)}
+
+/* header */
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--paper) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:24px;padding-block:14px}
+.mark{display:flex;align-items:center;gap:10px;text-decoration:none;white-space:nowrap}
+.mark b{font-family:var(--f-display);font-size:1.08rem;font-weight:700;letter-spacing:.1em}
+.mark span{font-family:var(--f-mono);font-size:.68rem;letter-spacing:.14em;color:var(--muted)}
+nav.links{display:flex;gap:22px;margin-left:auto;font-size:.92rem}
+nav.links a{text-decoration:none;color:var(--muted)}
+nav.links a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;gap:8px;font:600 .92rem/1 var(--f-body);padding:12px 18px;border-radius:2px;border:1px solid var(--accent);background:var(--accent);color:var(--accent-ink);text-decoration:none;cursor:pointer}
+.btn:hover{filter:brightness(1.08)}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--ink)}
+.lang{display:flex;border:1px solid var(--line);border-radius:2px;overflow:hidden;flex:none}
+.lang button{font:500 .75rem/1 var(--f-mono);letter-spacing:.08em;padding:9px 10px;border:0;background:transparent;color:var(--muted);cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+@media (max-width:860px){nav.links{display:none}.top .lang{margin-left:auto}}
+@media (max-width:480px){.top .wrap{gap:10px}.top .btn{padding:10px 12px;font-size:.84rem}}
+@media (max-width:1100px){.mark>span:last-child{display:none}}
+@media (max-width:480px){.mark b{display:none}}
+
+/* hero */
+.hero{padding-block:56px 40px}
+.hero-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:end}
+.hero h1{font-size:clamp(2.4rem,5.6vw,4.4rem);font-weight:600;line-height:1.06}
+.hero h1 em{font-style:normal}
+.hero h1 em{font-style:italic;color:var(--accent)}
+.hero .lede{margin-top:22px}
+.hero .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.hero-fig{position:relative;margin:0}
+.hero-fig img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:2px}
+.spec-tag{position:absolute;left:-18px;bottom:-22px;background:var(--tag);color:var(--ink);border:1px solid var(--line);padding:14px 16px 12px;min-width:230px;font-family:var(--f-mono);font-size:.78rem;box-shadow:0 12px 30px -18px rgba(10,14,40,.45)}
+.spec-tag::before{content:"";position:absolute;top:12px;right:12px;width:9px;height:9px;border-radius:50%;border:1.5px solid var(--muted)}
+.spec-tag dl{margin:8px 0 0;display:grid;grid-template-columns:auto 1fr;gap:4px 14px}
+.spec-tag dt{color:var(--muted)}
+.spec-tag dd{margin:0;text-align:right;font-variant-numeric:tabular-nums}
+@media (max-width:860px){.hero-grid{grid-template-columns:1fr;gap:40px}.spec-tag{left:12px}}
+
+/* figures strip */
+.figures{border-block:1px solid var(--line);margin-top:56px}
+.figures .wrap{display:grid;grid-template-columns:repeat(6,1fr)}
+.fig{padding:22px 16px 20px;border-left:1px solid var(--line)}
+.fig:first-child{border-left:0;padding-left:0}
+.fig b{display:block;font-family:var(--f-display);font-size:1.8rem;font-weight:600;line-height:1;font-variant-numeric:lining-nums tabular-nums}
+.fig span{display:block;margin-top:8px;font-size:.82rem;color:var(--muted);line-height:1.35}
+@media (max-width:960px){.figures .wrap{grid-template-columns:repeat(3,1fr)}.fig:nth-child(4){border-left:0;padding-left:0}.fig:nth-child(n+4){border-top:1px solid var(--line)}}
+@media (max-width:520px){.figures .wrap{grid-template-columns:repeat(2,1fr)}.fig{border-left:1px solid var(--line)!important;padding-left:16px!important;border-top:1px solid var(--line)}.fig:nth-child(odd){border-left:0!important;padding-left:0!important}.fig:nth-child(-n+2){border-top:0}}
+.src{font-family:var(--f-mono);font-size:.7rem;color:var(--muted);padding-block:10px 0}
+
+section.block{padding-block:88px 0}
+.head{display:grid;grid-template-columns:1fr 1fr;gap:24px 48px;align-items:end;margin-bottom:40px}
+.head .eyebrow{margin-bottom:14px}
+@media (max-width:860px){.head{grid-template-columns:1fr}}
+
+/* programs */
+.programs{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--line)}
+.prog{padding:28px 26px 30px;border-left:1px solid var(--line);display:flex;flex-direction:column;gap:14px;min-width:0}
+.prog:first-child{border-left:0}
+.prog .code{font-family:var(--f-mono);font-size:.78rem;letter-spacing:.1em;color:var(--accent)}
+.prog ul{margin:0;padding:0;list-style:none;display:grid;gap:8px;font-size:.95rem}
+.prog li{padding-left:18px;position:relative}
+.prog li::before{content:"";position:absolute;left:0;top:.72em;width:8px;height:1px;background:var(--ink)}
+.prog .foot{margin-top:auto;padding-top:14px;border-top:1px dashed var(--line);font-family:var(--f-mono);font-size:.78rem;color:var(--muted)}
+@media (max-width:860px){.programs{grid-template-columns:1fr}.prog{border-left:0;border-top:1px solid var(--line)}.prog:first-child{border-top:0}}
+
+/* catalog */
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
+.tab{font:500 .9rem/1 var(--f-body);padding:10px 16px;border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:999px;cursor:pointer}
+.tab[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.tab .n{font-family:var(--f-mono);font-size:.75rem;opacity:.65;margin-left:6px}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+@media (max-width:1060px){.grid{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:760px){.grid{grid-template-columns:repeat(2,1fr);gap:14px}}
+@media (max-width:440px){.grid{grid-template-columns:1fr}}
+.card{background:var(--tag);border:1px solid var(--line);display:flex;flex-direction:column;min-width:0}
+.card .plate{background:var(--plate);aspect-ratio:1/1;position:relative;overflow:hidden}
+.card .plate img{width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply;display:block}
+.card .hole{position:absolute;top:12px;left:12px;font-family:var(--f-mono);font-size:.7rem;letter-spacing:.08em;background:var(--ink);color:var(--paper);padding:4px 7px}
+.card .body{padding:16px 16px 18px;display:flex;flex-direction:column;gap:10px;flex:1}
+.card h3{font-size:1.18rem;line-height:1.15}
+.comp{font-family:var(--f-mono);font-size:.74rem;letter-spacing:.04em;text-transform:uppercase;color:var(--ink);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:7px 0}
+.card p{font-size:.88rem;color:var(--muted);line-height:1.5}
+.swatches{display:flex;gap:6px;margin-top:auto;padding-top:4px}
+.sw{width:30px;height:30px;padding:0;border:1px solid var(--line);background:var(--plate);cursor:pointer;overflow:hidden;border-radius:50%}
+.sw img{width:100%;height:100%;object-fit:cover;mix-blend-mode:multiply;transform:scale(1.9)}
+.sw[aria-pressed="true"]{outline:2px solid var(--accent);outline-offset:2px}
+.note{margin-top:22px;font-size:.88rem;color:var(--muted);max-width:80ch}
+
+/* chain */
+.chain{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+.step{grid-column:span 4;margin:0;display:flex;flex-direction:column;gap:12px;min-width:0}
+.step.wide{grid-column:span 8}
+.step img{width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;display:block;border-radius:2px;background:var(--paper-2)}
+.step.wide img{aspect-ratio:16/7.6}
+.step figcaption{display:grid;grid-template-columns:auto 1fr;gap:4px 14px}
+.step .no{font-family:var(--f-mono);font-size:.78rem;color:var(--accent);padding-top:3px}
+.step h3{font-size:1.2rem}
+.step p{grid-column:2;font-size:.9rem;color:var(--muted);line-height:1.5}
+@media (max-width:900px){.step,.step.wide{grid-column:span 6}.step.wide img{aspect-ratio:16/10}}
+@media (max-width:560px){.step,.step.wide{grid-column:span 12}}
+
+/* materials table */
+.tablewrap{overflow-x:auto;border:1px solid var(--line);background:var(--tag)}
+table{border-collapse:collapse;width:100%;min-width:640px;font-size:.92rem}
+th,td{text-align:left;padding:13px 16px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:0}
+th{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:500;background:var(--paper-2)}
+td:first-child{font-weight:600;white-space:nowrap}
+td.mono{font-size:.82rem}
+
+/* process */
+.process{display:grid;grid-template-columns:repeat(6,1fr);border-top:2px solid var(--ink)}
+.ps{padding:18px 16px 0 0;min-width:0}
+.ps .no{font-family:var(--f-mono);font-size:.78rem;color:var(--accent)}
+.ps h3{font-size:1.12rem;margin-top:10px}
+.ps p{font-size:.88rem;color:var(--muted);margin-top:8px;line-height:1.5}
+.ps .t{display:inline-block;margin-top:12px;font-family:var(--f-mono);font-size:.74rem;border:1px solid var(--line);padding:3px 7px}
+@media (max-width:960px){.process{grid-template-columns:repeat(3,1fr);row-gap:28px}}
+@media (max-width:560px){.process{grid-template-columns:1fr 1fr}}
+.lion-role{margin-top:48px;display:grid;grid-template-columns:1fr 2fr;gap:24px 48px;padding:30px;background:var(--paper-2);border:1px solid var(--line)}
+.lion-role ul{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:12px 28px;font-size:.95rem}
+.lion-role li{padding-left:18px;position:relative}
+.lion-role li::before{content:"";position:absolute;left:0;top:.72em;width:8px;height:1px;background:var(--accent)}
+@media (max-width:760px){.lion-role{grid-template-columns:1fr;padding:22px}.lion-role ul{grid-template-columns:1fr}}
+
+/* compliance */
+.comply{display:grid;grid-template-columns:300px 1fr;gap:40px;align-items:start}
+.certimg{border:1px solid var(--line);background:#fff;padding:10px;margin:0}
+.certimg img{display:block;width:100%;height:auto}
+.certimg figcaption{font-family:var(--f-mono);font-size:.7rem;color:#5B5E70;padding-top:8px}
+.docs{display:grid;gap:18px}
+.doc{border:1px solid var(--line);background:var(--tag);padding:22px 22px 20px}
+.doc h3{font-size:1.25rem}
+.doc .kind{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
+.doc dl{margin:14px 0 0;display:grid;grid-template-columns:max-content 1fr;gap:6px 18px;font-size:.9rem}
+.doc dt{color:var(--muted);font-family:var(--f-mono);font-size:.78rem;padding-top:2px}
+.doc dd{margin:0;min-width:0;overflow-wrap:anywhere}
+.qc{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line);background:var(--tag)}
+.qc div{padding:18px 20px;border-left:1px solid var(--line)}
+.qc div:first-child{border-left:0}
+.qc b{font-family:var(--f-display);font-size:1.6rem;font-weight:600;display:block;line-height:1}
+.qc span{font-size:.84rem;color:var(--muted)}
+@media (max-width:860px){.comply{grid-template-columns:1fr}.certimg{max-width:320px}}
+@media (max-width:480px){.qc{grid-template-columns:1fr}.qc div{border-left:0;border-top:1px solid var(--line)}.qc div:first-child{border-top:0}.doc dl{grid-template-columns:1fr}.doc dt{padding-top:6px}}
+
+/* contact */
+.contact{display:grid;grid-template-columns:1fr 1.25fr;gap:48px;align-items:start}
+.reach{display:grid;gap:14px;margin-top:28px}
+.reach .row{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;padding:14px 0;border-top:1px solid var(--line)}
+.reach .k{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);width:92px}
+.reach .v{font-size:1.02rem;font-weight:600;user-select:all;overflow-wrap:anywhere}
+.copy{font:500 .78rem/1 var(--f-mono);border:1px solid var(--line);background:transparent;color:var(--ink);padding:6px 9px;cursor:pointer}
+form{background:var(--tag);border:1px solid var(--line);padding:26px;display:grid;grid-template-columns:1fr 1fr;gap:16px 18px}
+.f{display:flex;flex-direction:column;gap:6px;min-width:0}
+.f.full{grid-column:1/-1}
+label{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+input,select,textarea{font:inherit;font-size:.96rem;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:2px;padding:11px 12px;width:100%}
+textarea{min-height:110px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--accent);outline-offset:0;border-color:transparent}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips label{text-transform:none;letter-spacing:0;font-family:var(--f-body);font-size:.9rem;color:var(--ink);border:1px solid var(--line);padding:8px 12px;border-radius:999px;cursor:pointer;display:flex;gap:7px;align-items:center}
+.chips input{width:auto;accent-color:var(--accent)}
+.out{grid-column:1/-1;border-top:1px dashed var(--line);padding-top:16px;display:grid;gap:12px}
+.out pre{margin:0;white-space:pre-wrap;font-family:var(--f-mono);font-size:.8rem;background:var(--paper);border:1px solid var(--line);padding:14px;max-height:260px;overflow:auto}
+.out .acts{display:flex;flex-wrap:wrap;gap:10px}
+.err{color:#C2362B;font-size:.85rem}
+@media (max-width:900px){.contact{grid-template-columns:1fr}}
+@media (max-width:520px){form{grid-template-columns:1fr;padding:18px}}
+
+footer{margin-top:96px;border-top:1px solid var(--line)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px 32px;justify-content:space-between;padding-block:26px 34px;font-size:.84rem;color:var(--muted)}
+footer b{color:var(--ink);font-weight:600}
+</style>
+<script>document.documentElement.dataset.brand="champagne";</script>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="mark" href="#top" aria-label="Lion Fashion home"><span class="lf" aria-hidden="true"><span>L<span class="f">F</span></span></span><b>LION FASHION</b><span>UNDERWEAR OEM · ODM</span></a>
+    <nav class="links" aria-label="Sections">
+      <a href="#programs">Programs</a>
+      <a href="#catalog">Styles</a>
+      <a href="#factory">Factory</a>
+      <a href="#process">How it works</a>
+      <a href="#compliance">Compliance</a>
+    </nav>
+    <div class="lang" role="group" aria-label="Language"><button type="button" data-lang="en" aria-pressed="true">EN</button><button type="button" data-lang="es" aria-pressed="false">ES</button></div>
+    <a class="btn" href="#contact">Request a quote</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow">Private-label underwear · Zhongshan, Guangdong</p>
+        <h1 style="margin-top:18px">Your underwear line, <em>made to spec</em> at factory scale.</h1>
+        <p class="lede">Shanghai Lion Industry develops and produces men's, women's and thermal underwear for brands and retailers. Fabric knitting, dyeing, cutting, seamless bonding, sewing and packing all happen inside one integrated supply chain, so you get one quote, one schedule and one team to talk to.</p>
+        <div class="cta">
+          <a class="btn" href="#contact">Start a project</a>
+          <a class="btn ghost" href="#catalog">Browse ODM styles</a>
+        </div>
+      </div>
+      <figure class="hero-fig">
+        <img src="img/f-hanging.jpg" alt="Sewing floor with an overhead hanging system carrying blue totes of cut pieces between workstations" width="1400" height="660">
+        <div class="spec-tag" aria-label="Production summary">
+          <div class="eyebrow" style="font-size:.66rem">Production tag</div>
+          <dl>
+            <dt>Bulk lead time</dt><dd>35 days</dd>
+            <dt>Rush (in-stock)</dt><dd>48 h</dd>
+            <dt>Inspection</dt><dd>AQL 2.5</dd>
+            <dt>Style changeover</dt><dd>2 h</dd>
+          </dl>
+        </div>
+      </figure>
+    </div>
+  </section>
+
+  <div class="figures">
+    <div class="wrap">
+      <div class="fig"><b>2013</b><span>Factory founded in Zhongshan</span></div>
+      <div class="fig"><b>45,000 m²</b><span>Production floor in Zhongshan</span></div>
+      <div class="fig"><b>1,200+</b><span>Automated sewing and finishing machines</span></div>
+      <div class="fig"><b>26</b><span>Production lines</span></div>
+      <div class="fig"><b>40 M</b><span>Pieces of annual capacity</span></div>
+      <div class="fig"><b>3</b><span>Bases: Zhongshan, Guangxi, Guizhou</span></div>
+    </div>
+  </div>
+  <div class="wrap"><p class="src">Figures as stated by our production partner for its group operations.</p></div>
+
+  <section class="block" id="programs">
+    <div class="wrap">
+      <div class="head">
+        <div><p class="eyebrow">Three ways to work with us</p><h2>Start from your tech pack, our styles, or our stock.</h2></div>
+        <p class="lede">Every program includes your own labels and packaging. Minimum order depends on the style and fabric; tell us your quantities per style and color and we will quote against them.</p>
+      </div>
+      <div class="programs">
+        <div class="prog">
+          <span class="code">OEM</span>
+          <h3>Made to your design</h3>
+          <ul>
+            <li>Built from your tech pack, size spec and reference samples</li>
+            <li>Fabric sourced or knitted to your composition and weight</li>
+            <li>Custom jacquard or printed waistband, woven or heat-transfer labels</li>
+            <li>Fit samples and pre-production approval before bulk</li>
+          </ul>
+          <p class="foot">Best for brands with an existing line</p>
+        </div>
+        <div class="prog">
+          <span class="code">ODM</span>
+          <h3>Developed styles, your brand</h3>
+          <ul>
+            <li>Choose from 100+ developed bases for men, women and thermal</li>
+            <li>Change fabric, color, waistband, gusset and leg length</li>
+            <li>Our design team adapts patterns to your market's sizing</li>
+            <li>Faster to launch: patterns and fabrics are already proven</li>
+          </ul>
+          <p class="foot">Best for new lines and private label</p>
+        </div>
+        <div class="prog">
+          <span class="code">IN-STOCK</span>
+          <h3>Ready programs</h3>
+          <ul>
+            <li>More than 100 best-selling styles held in stock</li>
+            <li>Your label and packaging added before dispatch</li>
+            <li>Urgent orders out in as little as 48 hours</li>
+            <li>Good for test orders and marketplace launches</li>
+          </ul>
+          <p class="foot">Best for speed and small first orders</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="catalog">
+    <div class="wrap">
+      <div class="head">
+        <div><p class="eyebrow">ODM style library</p><h2>Base styles ready to brand.</h2></div>
+        <p class="lede">A selection from the current library. Each base can change fabric, color, waistband and packaging. Select a color dot to see another colorway.</p>
+      </div>
+      <div class="tabs" role="group" aria-label="Filter styles">
+        <button class="tab" type="button" data-f="all" aria-pressed="true"><span>All</span><span class="n" id="n-all"></span></button>
+        <button class="tab" type="button" data-f="men" aria-pressed="false"><span>Men</span><span class="n" id="n-men"></span></button>
+        <button class="tab" type="button" data-f="women" aria-pressed="false"><span>Women</span><span class="n" id="n-women"></span></button>
+        <button class="tab" type="button" data-f="thermal" aria-pressed="false"><span>Thermal</span><span class="n" id="n-thermal"></span></button>
+      </div>
+      <div class="grid" id="grid"></div>
+      <p class="note">Product photos show developed samples. Retail claims such as antibacterial grades depend on the final fabric and finish and are confirmed by test report for your order.</p>
+    </div>
+  </section>
+
+  <section class="block" id="factory">
+    <div class="wrap">
+      <div class="head">
+        <div><p class="eyebrow">From yarn to carton</p><h2>One supply chain, seven stages, under one roof.</h2></div>
+        <p class="lede">Fabric, trims and garments are made inside the same group. That keeps cost down, keeps fabric traceable to the lot, and means a delay in one department is visible to the next.</p>
+      </div>
+      <div class="chain">
+        <figure class="step wide"><img src="img/f-creel.jpg" alt="Long creel of white yarn cones feeding circular knitting machines" loading="lazy" width="1400" height="435">
+          <figcaption><span class="no">01</span><h3>Knitting</h3><p>Circular knitting of modal, cotton, nylon and blended jersey and rib from cone yarn.</p></figcaption></figure>
+        <figure class="step"><img src="img/f-compactor.jpg" alt="Red knitted fabric running through a finishing and compacting line" loading="lazy" width="1400" height="652">
+          <figcaption><span class="no">02</span><h3>Dyeing &amp; finishing</h3><p>Dyeing, compacting and large pre-shrinkers to hold dimensions after washing.</p></figcaption></figure>
+        <figure class="step"><img src="img/f-cutting.jpg" alt="Automatic cutting table cutting nested underwear pattern pieces" loading="lazy" width="1400" height="816">
+          <figcaption><span class="no">03</span><h3>Automatic cutting</h3><p>Three 150-metre automatic cutting beds, cutting to ±0.1 mm.</p></figcaption></figure>
+        <figure class="step"><img src="img/f-laser.jpg" alt="Laser cutting gantry over a sheet of printed labels" loading="lazy" width="1400" height="652">
+          <figcaption><span class="no">04</span><h3>Laser &amp; bonding</h3><p>Laser-cut edges, perforation and bonded seams for seamless styles.</p></figcaption></figure>
+        <figure class="step"><img src="img/f-line.jpg" alt="Rows of sewing operators with an overhead hanging line of blue totes" loading="lazy" width="1400" height="652">
+          <figcaption><span class="no">05</span><h3>Sewing</h3><p>Automated machines with needle positioning and thread trimming; a hanging system moves bundles so goods never touch the floor.</p></figcaption></figure>
+        <figure class="step"><img src="img/f-sewing.jpg" alt="Close-up of a cover-stitch machine sewing white fabric" loading="lazy" width="1400" height="652">
+          <figcaption><span class="no">06</span><h3>Trims &amp; labels</h3><p>Jacquard and printed waistbands, heat-transfer labels and narrow-fabric weaving in house.</p></figcaption></figure>
+        <figure class="step wide"><img src="img/f-warehouse.jpg" alt="Packing tables and racking of finished, bagged goods" loading="lazy" width="1400" height="652">
+          <figcaption><span class="no">07</span><h3>Packing &amp; warehouse</h3><p>Folding, bagging, boxing and carton packing to your packing list, with AGV transport and MES tracking on the floor.</p></figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="materials">
+    <div class="wrap">
+      <div class="head">
+        <div><p class="eyebrow">Fabric library</p><h2>Fibers we run every week.</h2></div>
+        <p class="lede">Compositions below are taken from current production styles. Other blends, weights and finishes are available on request.</p>
+      </div>
+      <div class="tablewrap">
+        <table>
+          <thead><tr><th>Fiber</th><th>Typical composition</th><th>Where we use it</th><th>Hand &amp; performance</th></tr></thead>
+          <tbody>
+            <tr><td>Lenzing modal</td><td class="mono">60S · 89/11 modal/spandex</td><td>Women's briefs, men's trunks</td><td>Soft, cool drape, stable color after washing</td></tr>
+            <tr><td>Mulberry silk</td><td class="mono">86/14 silk/spandex · silk gussets</td><td>Premium briefs, gusset linings</td><td>Smooth, breathable, premium price point</td></tr>
+            <tr><td>Pima cotton</td><td class="mono">60S long-staple cotton</td><td>Everyday briefs</td><td>Fine, strong yarn; less pilling than standard cotton</td></tr>
+            <tr><td>Lyocell-modal rib</td><td class="mono">80S rib knit</td><td>Rib briefs</td><td>Light, elastic rib with a matte finish</td></tr>
+            <tr><td>Nylon "ice silk"</td><td class="mono">73/27 nylon/spandex · 120-count</td><td>Seamless and summer boxers</td><td>Cool touch, quick dry, very thin</td></tr>
+            <tr><td>PLA fiber</td><td class="mono">Polylactic-acid gusset</td><td>Women's briefs</td><td>Plant-based fiber, moisture-wicking</td></tr>
+            <tr><td>Combed cotton</td><td class="mono">95% cotton</td><td>Thermal sets</td><td>Warm, breathable base layer</td></tr>
+            <tr><td>Cashmere blend</td><td class="mono">Brushed · 280 g/m²</td><td>Men's thermal sets</td><td>Brushed interior with heat-retaining acrylic</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="process">
+    <div class="wrap">
+      <div class="head">
+        <div><p class="eyebrow">How an order runs</p><h2>Six steps from brief to shipment.</h2></div>
+        <p class="lede">Sampling time depends on whether a style is new or adapted from our library; we confirm it with the quote.</p>
+      </div>
+      <div class="process">
+        <div class="ps"><span class="no">01</span><h3>Brief</h3><p>Send your tech pack, a reference sample or the styles you picked from our library.</p><span class="t">Quote in writing</span></div>
+        <div class="ps"><span class="no">02</span><h3>Fabric &amp; trims</h3><p>We send swatches, lab dips and waistband options for approval.</p><span class="t">Swatch cards</span></div>
+        <div class="ps"><span class="no">03</span><h3>Sampling</h3><p>Fit samples, then a pre-production sample in final fabric and labels.</p><span class="t">PP sample sign-off</span></div>
+        <div class="ps"><span class="no">04</span><h3>Bulk</h3><p>Production starts after deposit and PP approval, with regular progress updates.</p><span class="t">35 days typical</span></div>
+        <div class="ps"><span class="no">05</span><h3>Inspection</h3><p>In-line and final inspection; third-party inspection welcome.</p><span class="t">AQL 2.5</span></div>
+        <div class="ps"><span class="no">06</span><h3>Shipping</h3><p>Cartons packed to your list; sea or air freight arranged from South China.</p><span class="t">FOB / CIF</span></div>
+      </div>
+
+      <div class="lion-role">
+        <div><p class="eyebrow">Why buy through Lion</p><h3 style="margin-top:10px;font-size:1.6rem">One contact who knows the factory floor.</h3></div>
+        <ul>
+          <li>Quotes, samples and contracts handled in English or Chinese</li>
+          <li>We follow sampling and bulk progress with the factory and report back to you</li>
+          <li>Pre-shipment checks against your approved sample</li>
+          <li>Freight booking, export documents and customs paperwork</li>
+          <li>Offices in Shanghai and Los Angeles</li>
+          <li>Exporting from China to buyers worldwide since 2002</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="compliance">
+    <div class="wrap">
+      <div class="head">
+        <div><p class="eyebrow">Compliance &amp; quality</p><h2>Audited, certified and inspected.</h2></div>
+        <p class="lede">Copies of certificates and the full audit report are sent to buyers on request.</p>
+      </div>
+      <div class="comply">
+        <figure class="certimg"><img src="img/cert-oekotex.jpg" alt="OEKO-TEX Standard 100 certificate 2601022 for Zhongshan Ronghai Knitting Co., Ltd." loading="lazy" width="700" height="990"><figcaption>Certificate 2601022 · issued 20.01.2026</figcaption></figure>
+        <div class="docs">
+          <div class="doc">
+            <p class="kind">Fabric certification</p>
+            <h3>OEKO-TEX® STANDARD 100</h3>
+            <dl>
+              <dt>Holder</dt><dd>Zhongshan Ronghai Knitting Co., Ltd. (fabric mill)</dd>
+              <dt>Certificate</dt><dd class="mono">2601022</dd>
+              <dt>Product class</dt><dd>I (articles for babies, the strictest class)</dd>
+              <dt>Scope</dt><dd>Knitted fabrics in cotton, Lenzing modal, viscose, lyocell, polyester, nylon, silk, wool and spandex blends; dyed and printed</dd>
+              <dt>Issued by</dt><dd>Centexbel, Belgium</dd>
+              <dt>Valid until</dt><dd class="mono">31.01.2027</dd>
+            </dl>
+          </div>
+          <div class="doc">
+            <p class="kind">Social compliance</p>
+            <h3>amfori BSCI social audit</h3>
+            <dl>
+              <dt>Site</dt><dd>Zhongshan Zhuoyue Garments Co., Ltd., Xiaolan Town, Zhongshan</dd>
+              <dt>Monitoring ID</dt><dd class="mono">26-0438042</dd>
+              <dt>Audit</dt><dd>Full monitoring, semi-announced, 19–21 Oct 2026</dd>
+              <dt>Auditor</dt><dd>Bureau Veritas</dd>
+              <dt>Valid until</dt><dd class="mono">28.10.2027</dd>
+            </dl>
+          </div>
+          <div class="qc">
+            <div><b>3</b><span>QC teams covering cutting, sewing and finishing</span></div>
+            <div><b>3</b><span>Inspection rounds on every order</span></div>
+            <div><b>2.5</b><span>AQL for final inspection</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="contact">
+    <div class="wrap contact">
+      <div>
+        <p class="eyebrow">Request a quote</p>
+        <h2 style="margin-top:14px">Tell us what you want to make.</h2>
+        <p class="lede" style="margin-top:18px">Fill in what you know. The form puts your request together; send it to us on WhatsApp or by email and we reply with questions or a first quote.</p>
+        <div class="reach">
+          <div class="row"><span class="k">Email</span><span class="v" id="em">sales@lionpackingsystems.com</span><button class="copy" type="button" data-copy="em">Copy</button></div>
+          <div class="row"><span class="k">WhatsApp</span><span class="v" id="wa">+1 314 250 8276</span><button class="copy" type="button" data-copy="wa">Copy</button></div>
+          <div class="row"><span class="k">Offices</span><span class="v" style="user-select:text">Shanghai · Los Angeles</span></div>
+        </div>
+      </div>
+      <form id="rfq" novalidate>
+        <div class="f"><label for="q-co">Company</label><input id="q-co" name="company" autocomplete="organization" placeholder="Brand or retailer"></div>
+        <div class="f"><label for="q-name">Your name</label><input id="q-name" name="name" autocomplete="name"></div>
+        <div class="f"><label for="q-mail">Email</label><input id="q-mail" name="email" type="email" autocomplete="email"></div>
+        <div class="f"><label for="q-country">Country</label><input id="q-country" name="country" autocomplete="country-name"></div>
+        <div class="f full"><label>Program</label>
+          <div class="chips">
+            <label><input type="radio" name="program" value="OEM" id="p-oem"> <span>OEM, my design</span></label>
+            <label><input type="radio" name="program" value="ODM" id="p-odm" checked> <span>ODM, your styles</span></label>
+            <label><input type="radio" name="program" value="In-stock" id="p-stock"> <span>In-stock + my label</span></label>
+          </div>
+        </div>
+        <div class="f full"><label>Categories</label>
+          <div class="chips">
+            <label><input type="checkbox" name="cat" value="Men's boxers/trunks" id="c-men"> <span>Men's</span></label>
+            <label><input type="checkbox" name="cat" value="Women's briefs" id="c-women"> <span>Women's</span></label>
+            <label><input type="checkbox" name="cat" value="Thermal sets" id="c-th"> <span>Thermal</span></label>
+            <label><input type="checkbox" name="cat" value="Sports underwear" id="c-sp"> <span>Sport</span></label>
+          </div>
+        </div>
+        <div class="f"><label for="q-qty">Quantity per style</label><input id="q-qty" name="qty" placeholder="e.g. 3,000 pcs × 4 colors"></div>
+        <div class="f"><label for="q-date">Target delivery</label><input id="q-date" name="date" placeholder="e.g. March 2027"></div>
+        <div class="f full"><label for="q-msg">Details</label><textarea id="q-msg" name="msg" placeholder="Styles you liked (e.g. ZY05), fabric, sizes, packaging, target price…"></textarea></div>
+        <div class="f full" style="flex-direction:row;flex-wrap:wrap;align-items:center;gap:12px"><button class="btn" type="submit">Prepare my request</button><span class="err" id="err" hidden></span></div>
+        <div class="out" id="out" hidden>
+          <pre id="txt"></pre>
+          <div class="acts">
+            <a class="btn" id="wa-link" href="https://wa.me/13142508276" target="_blank" rel="noopener">Send on WhatsApp</a>
+            <button class="btn ghost" type="button" id="copy-txt">Copy request</button>
+          </div>
+          <p class="src" id="copied" style="padding:0" aria-live="polite">To send by email, copy the request and paste it into a message to sales@lionpackingsystems.com.</p>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+
+
+<footer>
+  <div class="wrap">
+    <span><b>Shanghai Lion Industry Co., Ltd.</b> · 上海涞沅实业有限公司 · Underwear OEM / ODM</span>
+    <span>Production in Zhongshan, Guangdong, China</span>
+  </div>
+</footer>
+
+<script>
+const ES={"Programs": "Programas", "Styles": "Modelos", "Factory": "Fábrica", "How it works": "Cómo trabajamos", "Compliance": "Certificaciones", "Request a quote": "Solicitar cotización", "UNDERWEAR OEM · ODM": "ROPA INTERIOR OEM · ODM", "Private-label underwear · Zhongshan, Guangdong": "Ropa interior de marca privada · Zhongshan, Guangdong", "Your underwear line, <em>made to spec</em> at factory scale.": "Su línea de ropa interior, <em>hecha a su medida</em> a escala de fábrica.", "Shanghai Lion Industry develops and produces men's, women's and thermal underwear for brands and retailers. Fabric knitting, dyeing, cutting, seamless bonding, sewing and packing all happen inside one integrated supply chain, so you get one quote, one schedule and one team to talk to.": "Shanghai Lion Industry desarrolla y fabrica ropa interior para hombre, mujer y térmica para marcas y cadenas minoristas. Tejido, teñido, corte, termosellado sin costuras, confección y empaque se realizan dentro de una misma cadena de suministro integrada: una sola cotización, un solo cronograma y un solo equipo de contacto.", "Start a project": "Iniciar un proyecto", "Browse ODM styles": "Ver modelos ODM", "Production tag": "Ficha de producción", "Bulk lead time": "Plazo de producción", "35 days": "35 días", "Rush (in-stock)": "Urgente (en stock)", "Inspection": "Inspección", "Style changeover": "Cambio de modelo", "Factory founded in Zhongshan": "Fábrica fundada en Zhongshan", "Production floor in Zhongshan": "Área de producción en Zhongshan", "Automated sewing and finishing machines": "Máquinas automatizadas de costura y acabado", "Production lines": "Líneas de producción", "Pieces of annual capacity": "Piezas de capacidad anual", "Bases: Zhongshan, Guangxi, Guizhou": "Plantas: Zhongshan, Guangxi, Guizhou", "Figures as stated by our production partner for its group operations.": "Cifras declaradas por nuestro socio de producción para las operaciones de su grupo.", "Three ways to work with us": "Tres formas de trabajar con nosotros", "Start from your tech pack, our styles, or our stock.": "Parta de su ficha técnica, de nuestros modelos o de nuestro stock.", "Every program includes your own labels and packaging. Minimum order depends on the style and fabric; tell us your quantities per style and color and we will quote against them.": "Todos los programas incluyen sus propias etiquetas y empaque. El pedido mínimo depende del modelo y la tela; indíquenos sus cantidades por modelo y color y cotizaremos en base a ellas.", "Made to your design": "Fabricado según su diseño", "Built from your tech pack, size spec and reference samples": "Desarrollado a partir de su ficha técnica, tabla de medidas y muestras de referencia", "Fabric sourced or knitted to your composition and weight": "Tela comprada o tejida según su composición y gramaje", "Custom jacquard or printed waistband, woven or heat-transfer labels": "Elástico jacquard o estampado a medida, etiquetas tejidas o transfer", "Fit samples and pre-production approval before bulk": "Muestras de ajuste y aprobación de preproducción antes de la producción", "Best for brands with an existing line": "Ideal para marcas con una línea existente", "Developed styles, your brand": "Modelos desarrollados, su marca", "Choose from 100+ developed bases for men, women and thermal": "Elija entre más de 100 bases para hombre, mujer y térmicas", "Change fabric, color, waistband, gusset and leg length": "Cambie tela, color, elástico, entrepierna y largo de pierna", "Our design team adapts patterns to your market's sizing": "Nuestro equipo de diseño adapta los patrones a las tallas de su mercado", "Faster to launch: patterns and fabrics are already proven": "Lanzamiento más rápido: patrones y telas ya probados", "Best for new lines and private label": "Ideal para líneas nuevas y marca privada", "IN-STOCK": "EN STOCK", "Ready programs": "Programas listos", "More than 100 best-selling styles held in stock": "Más de 100 modelos superventas en stock", "Your label and packaging added before dispatch": "Su etiqueta y empaque se agregan antes del despacho", "Urgent orders out in as little as 48 hours": "Pedidos urgentes despachados en apenas 48 horas", "Good for test orders and marketplace launches": "Ideal para pedidos de prueba y lanzamientos en marketplaces", "Best for speed and small first orders": "Ideal para rapidez y primeros pedidos pequeños", "ODM style library": "Catálogo de modelos ODM", "Base styles ready to brand.": "Modelos base listos para su marca.", "A selection from the current library. Each base can change fabric, color, waistband and packaging. Select a color dot to see another colorway.": "Una selección del catálogo actual. En cada base se puede cambiar la tela, el color, el elástico y el empaque. Toque un punto de color para ver otra variante.", "All": "Todos", "Men": "Hombre", "Women": "Mujer", "Thermal": "Térmica", "Product photos show developed samples. Retail claims such as antibacterial grades depend on the final fabric and finish and are confirmed by test report for your order.": "Las fotos muestran muestras ya desarrolladas. Las declaraciones comerciales, como los grados antibacterianos, dependen de la tela y el acabado finales y se confirman con un informe de laboratorio para su pedido.", "From yarn to carton": "Del hilo a la caja", "One supply chain, seven stages, under one roof.": "Una cadena de suministro, siete etapas, bajo un mismo techo.", "Fabric, trims and garments are made inside the same group. That keeps cost down, keeps fabric traceable to the lot, and means a delay in one department is visible to the next.": "Telas, avíos y prendas se fabrican dentro del mismo grupo. Eso reduce costos, mantiene la trazabilidad de la tela por lote y hace que un retraso en un área sea visible para la siguiente.", "Knitting": "Tejido", "Circular knitting of modal, cotton, nylon and blended jersey and rib from cone yarn.": "Tejido circular de jersey y rib en modal, algodón, nailon y mezclas, a partir de hilo en conos.", "Dyeing &amp; finishing": "Teñido y acabado", "Dyeing, compacting and large pre-shrinkers to hold dimensions after washing.": "Teñido, compactado y grandes preencogedoras para mantener las medidas después del lavado.", "Automatic cutting": "Corte automático", "Three 150-metre automatic cutting beds, cutting to ±0.1 mm.": "Tres mesas de corte automático de 150 metros, con precisión de ±0,1 mm.", "Laser &amp; bonding": "Láser y termosellado", "Laser-cut edges, perforation and bonded seams for seamless styles.": "Bordes cortados con láser, perforado y uniones termoselladas para modelos sin costura.", "Sewing": "Confección", "Automated machines with needle positioning and thread trimming; a hanging system moves bundles so goods never touch the floor.": "Máquinas automatizadas con posicionamiento de aguja y corte de hilo; un sistema aéreo transporta los paquetes para que la mercadería nunca toque el piso.", "Trims &amp; labels": "Avíos y etiquetas", "Jacquard and printed waistbands, heat-transfer labels and narrow-fabric weaving in house.": "Elásticos jacquard y estampados, etiquetas transfer y tejeduría de cintas en la propia planta.", "Packing &amp; warehouse": "Empaque y almacén", "Folding, bagging, boxing and carton packing to your packing list, with AGV transport and MES tracking on the floor.": "Doblado, embolsado, encajado y empaque en cajas según su packing list, con transporte AGV y seguimiento MES en planta.", "Fabric library": "Catálogo de telas", "Fibers we run every week.": "Fibras que trabajamos cada semana.", "Compositions below are taken from current production styles. Other blends, weights and finishes are available on request.": "Las composiciones provienen de modelos en producción actual. Otras mezclas, gramajes y acabados están disponibles a pedido.", "Fiber": "Fibra", "Typical composition": "Composición típica", "Where we use it": "Dónde la usamos", "Hand &amp; performance": "Tacto y desempeño", "Lenzing modal": "Modal Lenzing", "Mulberry silk": "Seda de morera", "Pima cotton": "Algodón Pima", "Lyocell-modal rib": "Rib de lyocell-modal", "Nylon \"ice silk\"": "Nailon \"ice silk\"", "PLA fiber": "Fibra PLA", "Combed cotton": "Algodón peinado", "Cashmere blend": "Mezcla con cachemira", "60S · 89/11 modal/spandex": "60S · 89/11 modal/elastano", "86/14 silk/spandex · silk gussets": "86/14 seda/elastano · entrepiernas de seda", "60S long-staple cotton": "60S algodón de fibra larga", "80S rib knit": "80S tejido rib", "73/27 nylon/spandex · 120-count": "73/27 nailon/elastano · 120 hilos", "Polylactic-acid gusset": "Entrepierna de ácido poliláctico", "95% cotton": "95% algodón", "Brushed · 280 g/m²": "Perchado · 280 g/m²", "Women's briefs, men's trunks": "Calzones de mujer, bóxers de hombre", "Premium briefs, gusset linings": "Calzones premium, forros de entrepierna", "Everyday briefs": "Calzones de uso diario", "Rib briefs": "Calzones de rib", "Seamless and summer boxers": "Bóxers sin costura y de verano", "Women's briefs": "Calzones de mujer", "Thermal sets": "Conjuntos térmicos", "Men's thermal sets": "Conjuntos térmicos de hombre", "Soft, cool drape, stable color after washing": "Suave, caída fresca, color estable tras el lavado", "Smooth, breathable, premium price point": "Lisa, transpirable, segmento premium", "Fine, strong yarn; less pilling than standard cotton": "Hilo fino y resistente; menos motas que el algodón estándar", "Light, elastic rib with a matte finish": "Rib ligero y elástico con acabado mate", "Cool touch, quick dry, very thin": "Tacto frío, secado rápido, muy delgado", "Plant-based fiber, moisture-wicking": "Fibra de origen vegetal que absorbe la humedad", "Warm, breathable base layer": "Primera capa cálida y transpirable", "Brushed interior with heat-retaining acrylic": "Interior perchado con acrílico que retiene el calor", "How an order runs": "Cómo avanza un pedido", "Six steps from brief to shipment.": "Seis pasos de la solicitud al embarque.", "Sampling time depends on whether a style is new or adapted from our library; we confirm it with the quote.": "El tiempo de muestras depende de si el modelo es nuevo o adaptado de nuestro catálogo; lo confirmamos con la cotización.", "Brief": "Solicitud", "Send your tech pack, a reference sample or the styles you picked from our library.": "Envíe su ficha técnica, una muestra de referencia o los modelos que eligió de nuestro catálogo.", "Quote in writing": "Cotización por escrito", "Fabric &amp; trims": "Telas y avíos", "We send swatches, lab dips and waistband options for approval.": "Enviamos muestras de tela, lab dips y opciones de elástico para su aprobación.", "Swatch cards": "Muestrarios", "Sampling": "Muestras", "Fit samples, then a pre-production sample in final fabric and labels.": "Muestras de ajuste y luego una muestra de preproducción con tela y etiquetas finales.", "PP sample sign-off": "Aprobación de muestra PP", "Bulk": "Producción", "Production starts after deposit and PP approval, with regular progress updates.": "La producción comienza tras el anticipo y la aprobación de la muestra PP, con reportes periódicos de avance.", "35 days typical": "35 días típico", "In-line and final inspection; third-party inspection welcome.": "Inspección en línea y final; se aceptan inspecciones de terceros.", "Shipping": "Embarque", "Cartons packed to your list; sea or air freight arranged from South China.": "Cajas empacadas según su lista; flete marítimo o aéreo coordinado desde el sur de China.", "Why buy through Lion": "Por qué comprar a través de Lion", "One contact who knows the factory floor.": "Un solo contacto que conoce la planta.", "Quotes, samples and contracts handled in English or Chinese": "Cotizaciones, muestras y contratos en inglés o chino", "We follow sampling and bulk progress with the factory and report back to you": "Damos seguimiento a muestras y producción con la fábrica y le informamos", "Pre-shipment checks against your approved sample": "Revisión previa al embarque contra su muestra aprobada", "Freight booking, export documents and customs paperwork": "Reserva de flete, documentos de exportación y trámites aduaneros", "Offices in Shanghai and Los Angeles": "Oficinas en Shanghái y Los Ángeles", "Exporting from China to buyers worldwide since 2002": "Exportando desde China a compradores de todo el mundo desde 2002", "Compliance &amp; quality": "Cumplimiento y calidad", "Audited, certified and inspected.": "Auditados, certificados e inspeccionados.", "Copies of certificates and the full audit report are sent to buyers on request.": "Enviamos copias de los certificados y el informe completo de auditoría a los compradores que lo soliciten.", "Certificate 2601022 · issued 20.01.2026": "Certificado 2601022 · emitido el 20.01.2026", "Fabric certification": "Certificación de telas", "Holder": "Titular", "Certificate": "Certificado", "Product class": "Clase de producto", "Scope": "Alcance", "Issued by": "Emitido por", "Valid until": "Válido hasta", "Zhongshan Ronghai Knitting Co., Ltd. (fabric mill)": "Zhongshan Ronghai Knitting Co., Ltd. (tejeduría)", "I (articles for babies, the strictest class)": "I (artículos para bebés, la clase más exigente)", "Knitted fabrics in cotton, Lenzing modal, viscose, lyocell, polyester, nylon, silk, wool and spandex blends; dyed and printed": "Telas de punto de algodón, modal Lenzing, viscosa, lyocell, poliéster, nailon, seda, lana y mezclas con elastano; teñidas y estampadas", "Centexbel, Belgium": "Centexbel, Bélgica", "Social compliance": "Cumplimiento social", "amfori BSCI social audit": "Auditoría social amfori BSCI", "Site": "Planta", "Monitoring ID": "ID de monitoreo", "Audit": "Auditoría", "Full monitoring, semi-announced, 19–21 Oct 2026": "Monitoreo completo, semianunciada, 19–21 oct. 2026", "QC teams covering cutting, sewing and finishing": "Equipos de control de calidad en corte, confección y acabado", "Inspection rounds on every order": "Rondas de inspección en cada pedido", "AQL for final inspection": "AQL en la inspección final", "Tell us what you want to make.": "Cuéntenos qué quiere fabricar.", "Fill in what you know. The form puts your request together; send it to us on WhatsApp or by email and we reply with questions or a first quote.": "Complete lo que sepa. El formulario arma su solicitud; envíenosla por WhatsApp o por correo y le responderemos con preguntas o una primera cotización.", "Email": "Correo", "Offices": "Oficinas", "Shanghai · Los Angeles": "Shanghái · Los Ángeles", "Copy": "Copiar", "Company": "Empresa", "Your name": "Su nombre", "Country": "País", "Program": "Programa", "Categories": "Categorías", "Quantity per style": "Cantidad por modelo", "Target delivery": "Entrega deseada", "Details": "Detalles", "OEM, my design": "OEM, mi diseño", "ODM, your styles": "ODM, sus modelos", "In-stock + my label": "En stock + mi etiqueta", "Men's": "Hombre", "Women's": "Mujer", "Sport": "Deportiva", "Prepare my request": "Preparar mi solicitud", "Send on WhatsApp": "Enviar por WhatsApp", "Copy request": "Copiar solicitud", "To send by email, copy the request and paste it into a message to sales@lionpackingsystems.com.": "Para enviarla por correo, copie la solicitud y péguela en un mensaje a sales@lionpackingsystems.com.", "<b>Shanghai Lion Industry Co., Ltd.</b> · 上海涞沅实业有限公司 · Underwear OEM / ODM": "<b>Shanghai Lion Industry Co., Ltd.</b> · 上海涞沅实业有限公司 · Ropa interior OEM / ODM", "Production in Zhongshan, Guangdong, China": "Producción en Zhongshan, Guangdong, China", "Color theme": "Tema de color"}, PH={"Brand or retailer": "Marca o minorista", "e.g. 3,000 pcs × 4 colors": "ej. 3.000 pzas × 4 colores", "e.g. March 2027": "ej. marzo 2027", "Styles you liked (e.g. ZY05), fabric, sizes, packaging, target price…": "Modelos que le interesan (ej. ZY05), tela, tallas, empaque, precio objetivo…"};
+let LANG='en';
+const SEL='h1,h2,h3,p,li,a,button,dt,dd,th,td,label,span,div.eyebrow,figcaption';
+function setLang(l){
+  LANG=l; document.documentElement.lang=l;
+  document.querySelectorAll(SEL).forEach(el=>{
+    if(el.closest('#grid')||el.id==='txt')return;
+    if(l==='es'){const k=el.innerHTML.trim(); if(ES[k]!==undefined && el.dataset.en===undefined){el.dataset.en=k; el.innerHTML=ES[k];}}
+    else if(el.dataset.en!==undefined){el.innerHTML=el.dataset.en; delete el.dataset.en;}
+  });
+  document.querySelectorAll('[placeholder]').forEach(el=>{
+    if(el.dataset.enph===undefined) el.dataset.enph=el.placeholder;
+    el.placeholder=l==='es'?(PH[el.dataset.enph]||el.dataset.enph):el.dataset.enph;
+  });
+  document.querySelectorAll('.lang button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.lang===l));
+  if(typeof render==='function') render();
+  const out=document.getElementById('out'); if(out && !out.hidden) out.hidden=true;
+  try{localStorage.setItem('lion-lang',l)}catch(_){}
+}
+const P=[
+ {c:'men',code:'M-SB01',es:["Bóxer sin costuras termosellado", "Nailon / elastano · termosellado", "Nuestro modelo principal para hombre. Bordes cortados con láser y termosellados, sin costuras laterales y con bolsa frontal 3D."],name:'Seamless bonded boxer brief',comp:'Nylon / spandex · bonded',txt:'Our lead men\'s style. Laser-cut, bonded edges with no side seams and a 3D-shaped pouch.',img:['m-seamless-grey','m-seamless-black','m-seamless-navy']},
+ {c:'men',code:'M-IS02',es:["Bóxer ice silk de doble capa", "Nailon ice silk · bolsa doble", "Nailon de tacto frío con frente de dos capas para soporte y opacidad en colores claros."],name:'Ice-silk double-layer trunk',comp:'Nylon ice silk · double pouch',txt:'Cool-touch nylon with a two-layer front for support and opacity in light colors.',img:['m-icesilk-grey','m-icesilk-blue']},
+ {c:'men',code:'M-PR03',es:["Bóxer ice silk estampado", "Nailon ice silk · estampado total", "Su diseño estampado en toda la prenda; entrepierna con acabado antibacteriano."],name:'Printed ice-silk trunk',comp:'Nylon ice silk · all-over print',txt:'Your artwork printed all-over; antibacterial-finish gusset.',img:['m-printed']},
+ {c:'men',code:'M-GL04',es:["Bóxer de acabado satinado", "73% nailon · 27% elastano", "Tela de alto brillo con elástico de cintura suave y perchado."],name:'Satin-finish trunk',comp:'73% nylon · 27% spandex',txt:'High-luster fabric with a soft brushed waistband.',img:['m-glossy']},
+ {c:'men',code:'M-UT05',es:["Bóxer ultradelgado", "Nailon ice silk de 120 hilos", "Peso muy ligero para verano, de secado rápido."],name:'Ultra-thin trunk',comp:'120-count nylon ice silk',txt:'Very light summer weight that dries fast.',img:['m-thin-blue','m-thin-navy']},
+ {c:'men',code:'M-SP06',es:["Bóxer deportivo de pierna larga", "Micromalla · pierna antirozaduras", "Pierna más larga para evitar rozaduras, bolsa de malla y paneles ventilados para entrenar."],name:'Long-leg sport boxer',comp:'Micro-mesh · anti-chafe leg',txt:'Longer leg to stop chafing, mesh pouch and vented panels for training.',img:['m-sport-black','m-sport-camo']},
+ {c:'women',code:'ZY01',es:["Calzón de seda de morera", "86% seda de morera · 14% elastano", "Calzón premium sin costuras con entrepierna extendida de acabado antibacteriano."],name:'Mulberry silk brief',comp:'86% mulberry silk · 14% spandex',txt:'Seamless premium brief with an extended antibacterial-finish gusset.',img:['w-silk-taupe','w-silk-green']},
+ {c:'women',code:'ZY02',es:["Calzón de modal, entrepierna de seda", "88% modal · 12% elastano", "Cuerpo de modal con forro de entrepierna de seda de morera."],name:'Modal brief, silk gusset',comp:'88% modal · 12% spandex',txt:'Modal body with a mulberry silk gusset lining.',img:['w-silkcrotch-lilac']},
+ {c:'women',code:'ZY03',es:["Calzón de modal, entrepierna PLA", "Modal · entrepierna de ácido poliláctico", "Entrepierna de fibra PLA de origen vegetal que absorbe la humedad."],name:'Modal brief, PLA gusset',comp:'Modal · polylactic-acid gusset',txt:'Plant-based PLA fiber gusset that wicks moisture.',img:['w-pla-lilac','w-pla-red']},
+ {c:'women',code:'ZY04',es:["Calzón de rib 80S", "Rib de lyocell-modal 80S", "Tejido rib fino con ribete en contraste."],name:'80S rib brief',comp:'80S lyocell-modal rib',txt:'Fine rib knit with contrast binding.',img:['w-tencel-pink']},
+ {c:'women',code:'ZY05',es:["Calzón de modal Lenzing 60S", "Modal Lenzing 60S", "Modal de galga fina con superficie suave y mate."],name:'60S Lenzing modal brief',comp:'60S Lenzing modal',txt:'Fine-gauge modal with a soft, matte surface.',img:['w-lenzing-cream']},
+ {c:'women',code:'ZY06',es:["Calzón de modal sin costuras", "89% modal · 11% elastano", "Corte de una sola pieza que no se marca bajo ropa ajustada."],name:'Seamless modal brief',comp:'89% modal · 11% spandex',txt:'One-piece cut that stays invisible under fitted clothing.',img:['w-modal-lilac']},
+ {c:'women',code:'ZY07',es:["Calzón de algodón Pima", "Algodón Pima 60S", "Calzón de uso diario en algodón de fibra larga, con entrepierna de algodón."],name:'Pima cotton brief',comp:'60S Pima cotton',txt:'Long-staple cotton everyday brief with a cotton gusset.',img:['w-pima-lilac','w-pima-black']},
+ {c:'women',code:'ZY08',es:["Calzón tiro alto de algodón Pima", "Algodón Pima 60S", "Tiro más alto con elástico de cintura ancho y plano."],name:'Pima cotton high-rise brief',comp:'60S Pima cotton',txt:'Higher rise with a wide, flat waistband.',img:['w-pima-teal','w-pima-grey']},
+ {c:'thermal',code:'BN01',es:["Conjunto térmico de hombre con cachemira", "Perchado · 280 g/m²", "Camiseta y pantalón largo con interior perchado para climas fríos."],name:'Men\'s cashmere-blend thermal set',comp:'Brushed · 280 g/m²',txt:'Top and long johns with a brushed interior for cold climates.',img:['t-men-cashmere']},
+ {c:'thermal',code:'BN02',es:["Conjunto térmico de hombre de algodón", "95% algodón peinado", "Camiseta de cuello redondo y pantalón transpirables para el día a día."],name:'Men\'s cotton thermal set',comp:'95% combed cotton',txt:'Breathable crew-neck top and pants for everyday warmth.',img:['t-men-cotton']},
+ {c:'thermal',code:'BN03',es:["Camiseta térmica de mujer de algodón", "Algodón peinado", "Primera capa entallada de manga larga en colores de temporada."],name:'Women\'s cotton thermal top',comp:'Combed cotton',txt:'Slim long-sleeve base layer in seasonal colors.',img:['t-women-cotton']}
+];
+const grid=document.getElementById('grid');
+const esc=s=>s.replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));
+function render(){const es=LANG==='es';
+grid.innerHTML=P.map((p,i)=>{const nm=es?p.es[0]:p.name,cp=es?p.es[1]:p.comp,tx=es?p.es[2]:p.txt;return `<article class="card" data-c="${p.c}">
+  <div class="plate"><img id="pi${i}" src="img/${p.img[0]}.jpg" alt="${esc(nm)}" loading="lazy" width="640" height="640"><span class="hole">${p.code}</span></div>
+  <div class="body"><h3>${esc(nm)}</h3><div class="comp">${esc(cp)}</div><p>${esc(tx)}</p>
+  ${p.img.length>1?`<div class="swatches">${p.img.map((m,j)=>`<button class="sw" type="button" aria-label="${es?'Color':'Colorway'} ${j+1}" aria-pressed="${j===0}" data-i="${i}" data-m="${m}"><img src="img/${m}.jpg" alt="" loading="lazy"></button>`).join('')}</div>`:''}
+  </div></article>`}).join('');
+const f=(document.querySelector('.tab[aria-pressed="true"]')||{}).dataset; const fl=f?f.f:'all'; grid.querySelectorAll('.card').forEach(c=>c.hidden=!(fl==='all'||c.dataset.c===fl));}
+render();
+['all','men','women','thermal'].forEach(k=>{document.getElementById('n-'+k).textContent=k==='all'?P.length:P.filter(p=>p.c===k).length});
+grid.addEventListener('click',e=>{const b=e.target.closest('.sw');if(!b)return;document.getElementById('pi'+b.dataset.i).src='img/'+b.dataset.m+'.jpg';b.parentNode.querySelectorAll('.sw').forEach(s=>s.setAttribute('aria-pressed',s===b))});
+document.querySelectorAll('.tab').forEach(t=>t.addEventListener('click',()=>{
+  document.querySelectorAll('.tab').forEach(x=>x.setAttribute('aria-pressed',x===t));
+  const f=t.dataset.f; grid.querySelectorAll('.card').forEach(c=>c.hidden=!(f==='all'||c.dataset.c===f));
+}));
+
+function copyText(text,el){
+  const done=()=>{if(el){const o=el.textContent;el.textContent=LANG==='es'?'Copiado':'Copied';setTimeout(()=>el.textContent=o,1600)}};
+  try{navigator.clipboard.writeText(text).then(done,()=>sel())}catch(_){sel()}
+  function sel(){const n=document.getElementById('txt');const r=document.createRange();r.selectNodeContents(n);const s=getSelection();s.removeAllRanges();s.addRange(r)}
+}
+document.querySelectorAll('[data-copy]').forEach(b=>b.addEventListener('click',()=>copyText(document.getElementById(b.dataset.copy).textContent,b)));
+
+const form=document.getElementById('rfq');
+form.addEventListener('submit',e=>{
+  e.preventDefault();
+  const v=id=>document.getElementById(id).value.trim();
+  const err=document.getElementById('err');
+  if(!v('q-co')||!v('q-mail')){err.textContent=LANG==='es'?'Indique su empresa y correo para poder responderle.':'Add your company and email so we can reply.';err.hidden=false;return}
+  err.hidden=true;
+  const prog=(form.querySelector('input[name=program]:checked')||{}).value||'';
+  const es=LANG==='es';
+  const CE={"Men's boxers/trunks":'Bóxers de hombre',"Women's briefs":'Calzones de mujer','Thermal sets':'Conjuntos térmicos','Sports underwear':'Ropa interior deportiva'};
+  const cats=[...form.querySelectorAll('input[name=cat]:checked')].map(x=>es?CE[x.value]:x.value).join(', ')||(es?'No especificado':'Not specified');
+  const L=es?['Solicitud de cotización de ropa interior','Empresa','Contacto','Correo','País','Programa','Categorías','Cantidad por modelo','Entrega deseada','Detalles']:['Underwear quote request','Company','Contact','Email','Country','Program','Categories','Quantity per style','Target delivery','Details'];
+  const t=`${L[0]}
+${L[1]}: ${v('q-co')}
+${L[2]}: ${v('q-name')||'-'}
+${L[3]}: ${v('q-mail')}
+${L[4]}: ${v('q-country')||'-'}
+${L[5]}: ${prog}
+${L[6]}: ${cats}
+${L[7]}: ${v('q-qty')||'-'}
+${L[8]}: ${v('q-date')||'-'}
+${L[9]}: ${v('q-msg')||'-'}`;
+  document.getElementById('txt').textContent=t;
+  document.getElementById('wa-link').href='https://wa.me/13142508276?text='+encodeURIComponent(t);
+  const out=document.getElementById('out'); out.hidden=false; out.scrollIntoView({block:'nearest'});
+});
+document.getElementById('copy-txt').addEventListener('click',e=>copyText(document.getElementById('txt').textContent,e.currentTarget));
+
+document.querySelectorAll('.lang button').forEach(b=>b.addEventListener('click',()=>{if(b.dataset.lang!==LANG)setLang(b.dataset.lang)}));
+(function(){let l=null;try{l=localStorage.getItem('lion-lang')}catch(_){}
+  if(!l) l=(navigator.language||'').toLowerCase().startsWith('es')?'es':'en';
+  if(l==='es') setLang('es');})();
+</script>
+
+</body>
+</html>
