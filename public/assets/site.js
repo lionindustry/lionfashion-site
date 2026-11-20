@@ -1,7 +1,7 @@
 // Lion Fashion: colorway dots, copy buttons and the quote request form (English or Spanish by <html lang>).
 (function () {
   var es = document.documentElement.lang === 'es';
-  var WA = '13142508276', MAIL = 'sales@lionpackingsystems.com';
+  var WA = '13142508276', MAIL = 'sales@lionfashionglobal.com';
 
   document.addEventListener('click', function (e) {
     var b = e.target.closest('.sw');
