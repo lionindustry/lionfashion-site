@@ -6,16 +6,16 @@
   "preview_urls": false,
   "routes": [
     {
-      "pattern": "lionfashion.com",
+      "pattern": "lionfashionglobal.com",
       "custom_domain": true
     },
     {
-      "pattern": "www.lionfashion.com",
+      "pattern": "www.lionfashionglobal.com",
       "custom_domain": true
     }
   ],
   "vars": {
-    "HOME": "lionfashion.com"
+    "HOME": "lionfashionglobal.com"
   },
   "assets": {
     "directory": "./public",
