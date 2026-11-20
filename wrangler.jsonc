@@ -1,0 +1,27 @@
+{
+  "name": "lionfashion",
+  "main": "src/worker.js",
+  "compatibility_date": "2026-09-01",
+  "workers_dev": true,
+  "preview_urls": false,
+  "routes": [
+    {
+      "pattern": "lionfashion.com",
+      "custom_domain": true
+    },
+    {
+      "pattern": "www.lionfashion.com",
+      "custom_domain": true
+    }
+  ],
+  "vars": {
+    "HOME": "lionfashion.com"
+  },
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    "run_worker_first": true,
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  }
+}
