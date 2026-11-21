@@ -18,8 +18,8 @@ DOMAIN = os.environ.get('LF_DOMAIN') or open(os.path.join(SRC, 'DOMAIN')).read()
 SITE = f'https://{DOMAIN}'
 TODAY = date.today().isoformat()
 EMAIL = 'sales@lionfashionglobal.com'
-WA = '+1 314 250 8276'
-WA_NUM = '13142508276'
+WA = '+1 626 702 9043'
+WA_NUM = '16267029043'
 IMGV = '2'   # raise when a product photo is replaced under the same name, so browsers load the new one
 
 # ---------------------------------------------------------------- pages
@@ -328,7 +328,7 @@ def body_for(pg):
 # ---------------------------------------------------------------- structured data
 ORG = {"@type": "Organization", "@id": SITE + "/#org", "name": "Lion Fashion",
        "alternateName": ["Lion Fashion Underwear", "Lion Fashion Global"],
-       "url": SITE + "/", "logo": SITE + "/img/logo.png", "email": EMAIL, "telephone": "+1-314-250-8276",
+       "url": SITE + "/", "logo": SITE + "/img/logo.png", "email": EMAIL, "telephone": "+1-626-702-9043",
        "address": {"@type": "PostalAddress", "addressLocality": "Shanghai", "addressCountry": "CN"},
        "areaServed": ["Latin America", "Mexico", "United States", "Europe", "Asia"], "knowsLanguage": ["en", "es"]}
 
