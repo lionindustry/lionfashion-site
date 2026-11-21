@@ -1,8 +1,8 @@
 # Lion Fashion website
 
-Underwear OEM/ODM website of Lion Fashion (Shanghai Lion Industry Co., Ltd.), in English and Spanish.
+Underwear OEM/ODM website of Lion Fashion, in English and Spanish.
 All site files are in `public/`. Cloudflare Workers deploys this repository automatically on every change to `main`
-(same setup as lionpackingsystems.com).
+.
 
 ## Pages
 

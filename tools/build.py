@@ -146,7 +146,7 @@ ES_NEW = {
  'Production stages':'Etapas de producción', 'Back to home':'Volver al inicio',
  'Page not found':'Página no encontrada', 'This page does not exist or has moved.':'Esta página no existe o se ha movido.', 'Go to the home page':'Ir a la página de inicio',
  'Send by email':'Enviar por correo', 'Pages':'Páginas', 'Contact':'Contacto',
- 'Copy':'Copiar', 'Guide':'Guía',
+ 'Copy':'Copiar', 'Guide':'Guía', '<b>Lion Fashion</b> · Underwear OEM / ODM':'<b>Lion Fashion</b> · Ropa interior OEM / ODM',
  'Guides':'Guías', 'Guides for buyers':'Guías para compradores', 'Read the guide':'Leer la guía', 'More guides':'Más guías',
  'Published':'Publicado', 'Updated':'Actualizado', 'Related pages':'Páginas relacionadas', 'Get a quote for your brand':'Pida una cotización para su marca',
  'Send your styles, fabrics and quantities and we reply with questions or a first quote.':'Envíe sus modelos, telas y cantidades y le responderemos con preguntas o una primera cotización.',
@@ -209,7 +209,7 @@ def footer():
     links = ''.join(f'<a href="/{p["slug"]}/">{esc(p["nav"][0])}</a>' for p in PAGES if p['nav'])
     return f'''<footer>
   <div class="wrap">
-    <div class="fcol"><span class="lf" aria-hidden="true"><span>L<span class="f">F</span></span></span><p><b>Shanghai Lion Industry Co., Ltd.</b> · 上海涞沅实业有限公司 · Underwear OEM / ODM</p><p>Production in Zhongshan, Guangdong, China</p></div>
+    <div class="fcol"><span class="lf" aria-hidden="true"><span>L<span class="f">F</span></span></span><p><b>Lion Fashion</b> · Underwear OEM / ODM</p><p>Production in Zhongshan, Guangdong, China</p></div>
     <nav class="fnav" aria-label="Pages"><a href="/">Home</a>{links}</nav>
     <div class="fcol"><p class="mono">{EMAIL}</p><p class="mono">WhatsApp {WA}</p></div>
   </div>
@@ -326,8 +326,8 @@ def body_for(pg):
 ''' + faq_html([FAQ[i] for i in CAT_FAQ[cat]], 'Questions about this category', more=True) + '\n' + guides_section() + '\n' + section('programs'))
 
 # ---------------------------------------------------------------- structured data
-ORG = {"@type": "Organization", "@id": SITE + "/#org", "name": "Lion Fashion", "legalName": "Shanghai Lion Industry Co., Ltd.",
-       "alternateName": ["Lion Fashion Underwear", "Shanghai Lion Industry", "上海涞沅实业有限公司"],
+ORG = {"@type": "Organization", "@id": SITE + "/#org", "name": "Lion Fashion",
+       "alternateName": ["Lion Fashion Underwear", "Lion Fashion Global"],
        "url": SITE + "/", "logo": SITE + "/img/logo.png", "email": EMAIL, "telephone": "+1-314-250-8276",
        "address": {"@type": "PostalAddress", "addressLocality": "Shanghai", "addressCountry": "CN"},
        "areaServed": ["Latin America", "Mexico", "United States", "Europe", "Asia"], "knowsLanguage": ["en", "es"]}
