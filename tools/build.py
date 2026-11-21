@@ -5,7 +5,9 @@ Edit the English text here or in source/sections.html, add the Spanish for any n
 ES_NEW below (or source/es_base.json), then run:   python3 tools/build.py
 The build stops and lists any English text that has no Spanish translation.
 """
-import json, os, re, shutil, sys, html
+import json, os, re, shutil, sys, html, hashlib
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from guides import GUIDES, GUIDES_INDEX
 from datetime import date
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -26,7 +28,7 @@ PAGES = [
   dict(slug='', nav=None,
        title=('Underwear OEM & ODM Manufacturer in China | Lion Fashion', 'Fabricante de ropa interior OEM y ODM en China | Lion Fashion'),
        desc=("Private-label men's, women's and thermal underwear made to your spec in Zhongshan, China. OEM, ODM and in-stock programs, OEKO-TEX certified fabrics, 35-day bulk lead time.",
-             'Ropa interior de marca privada para hombre, mujer y térmica, fabricada a su medida en Zhongshan, China. Programas OEM, ODM y en stock, telas con certificación OEKO-TEX y producción en 35 días.')),
+             'Ropa interior con su marca para hombre, mujer y térmica, fabricada a su medida en China. Programas OEM, ODM y en stock, telas OEKO-TEX, producción en 35 días.')),
   dict(slug='mens-underwear-manufacturer', cat='men', nav=("Men's", 'Hombre'),
        title=("Men's Underwear Manufacturer: Boxers & Trunks OEM | Lion Fashion", 'Fabricante de ropa interior de hombre: bóxers OEM | Lion Fashion'),
        desc=("Private-label men's boxer briefs and trunks: seamless bonded, nylon ice silk, modal and sport styles. Your label, your packaging, 35-day bulk production in China.",
@@ -52,20 +54,23 @@ PAGES = [
               'Camisetas y pantalones de primera capa para colecciones de invierno: conjuntos perchados con cachemira de 280 g/m² y conjuntos transpirables de algodón peinado. Haga su pedido antes de la temporada; colores, gramajes y empaque según su programa.'),
        img='f-compactor.jpg'),
   dict(slug='factory', nav=('Factory', 'Fábrica'),
-       title=('Underwear Factory in Zhongshan: Knitting to Packing | Lion Fashion', 'Fábrica de ropa interior en Zhongshan: del tejido al empaque | Lion Fashion'),
-       desc=('Inside our underwear supply chain in Zhongshan, Guangdong: circular knitting, dyeing, automatic cutting, laser bonding, sewing and packing. OEKO-TEX fabrics, amfori BSCI audited, AQL 2.5.',
-             'Nuestra cadena de suministro de ropa interior en Zhongshan, Guangdong: tejido circular, teñido, corte automático, termosellado láser, confección y empaque. Telas OEKO-TEX, auditoría amfori BSCI, AQL 2.5.'),
+       title=('Underwear Factory in Zhongshan: Knitting to Packing | Lion Fashion', 'Fábrica de ropa interior en Zhongshan, China | Lion Fashion'),
+       desc=('Our underwear supply chain in Zhongshan, China: knitting, dyeing, automatic cutting, laser bonding, sewing and packing. OEKO-TEX fabrics, BSCI audited, AQL 2.5.',
+             'Nuestra fábrica de ropa interior en Zhongshan: tejido, teñido, corte automático, termosellado, confección y empaque. Telas OEKO-TEX, auditoría BSCI, AQL 2.5.'),
        h1=('From yarn to carton in one supply chain', 'Del hilo a la caja en una sola cadena de suministro'),
        intro=('Fabric, trims and garments are made inside the same group in Zhongshan, Guangdong. Here is what happens at each stage, the fibers we run, and how quality and compliance are checked.',
               'Telas, avíos y prendas se fabrican dentro del mismo grupo en Zhongshan, Guangdong. Esto es lo que ocurre en cada etapa, las fibras que trabajamos y cómo se controlan la calidad y el cumplimiento.')),
   dict(slug='faq', nav=('FAQ', 'Preguntas'),
-       title=('Underwear OEM & ODM FAQ: MOQ, Lead Time, Samples | Lion Fashion', 'Preguntas frecuentes OEM y ODM de ropa interior: pedido mínimo, plazos, muestras | Lion Fashion'),
+       title=('Underwear OEM & ODM FAQ: MOQ, Lead Time, Samples | Lion Fashion', 'Preguntas frecuentes: pedido mínimo, plazos y muestras | Lion Fashion'),
        desc=('Answers for brands planning a private-label underwear order: minimum order, OEM vs ODM, samples, lead time, labels and packaging, fabrics, certification, quality control and shipping.',
-             'Respuestas para marcas que planean un pedido de ropa interior de marca privada: pedido mínimo, OEM vs ODM, muestras, plazos, etiquetas y empaque, telas, certificación, control de calidad y embarque.'),
+             'Respuestas para marcas que planean un pedido de ropa interior: pedido mínimo, OEM vs ODM, muestras, plazos, etiquetas, telas, calidad y embarque.'),
        h1=('Questions buyers ask before ordering', 'Preguntas que hacen los compradores antes de pedir'),
        intro=('Short answers to what brands usually ask in the first emails. If yours is not here, send it with the quote form at the bottom of the page.',
               'Respuestas breves a lo que las marcas suelen preguntar en los primeros correos. Si su pregunta no está aquí, envíela con el formulario de cotización al final de la página.')),
 ]
+
+PAGES.insert(len(PAGES) - 1, GUIDES_INDEX)   # nav order: ..., Factory, Guides, FAQ
+GUIDE_PAGES = [dict(g, slug='guides/' + g['slug'], kind='guide', nav=g['h1']) for g in GUIDES]
 
 # ---------------------------------------------------------------- products (EN, ES)
 P = [
@@ -141,8 +146,15 @@ ES_NEW = {
  'Production stages':'Etapas de producción', 'Back to home':'Volver al inicio',
  'Page not found':'Página no encontrada', 'This page does not exist or has moved.':'Esta página no existe o se ha movido.', 'Go to the home page':'Ir a la página de inicio',
  'Send by email':'Enviar por correo', 'Pages':'Páginas', 'Contact':'Contacto',
- 'Copy':'Copiar',
+ 'Copy':'Copiar', 'Guide':'Guía',
+ 'Guides':'Guías', 'Guides for buyers':'Guías para compradores', 'Read the guide':'Leer la guía', 'More guides':'Más guías',
+ 'Published':'Publicado', 'Updated':'Actualizado', 'Related pages':'Páginas relacionadas', 'Get a quote for your brand':'Pida una cotización para su marca',
+ 'Send your styles, fabrics and quantities and we reply with questions or a first quote.':'Envíe sus modelos, telas y cantidades y le responderemos con preguntas o una primera cotización.',
+ 'Start your request':'Iniciar su solicitud',
+ 'Planning your first order? These guides explain the steps, the programs and the fabrics.':'¿Planea su primer pedido? Estas guías explican los pasos, los programas y las telas.',
 }
+for g in GUIDES:
+    ES_NEW[g['h1'][0]] = g['h1'][1]; ES_NEW[g['desc'][0]] = g['desc'][1]
 for (qe, qs), (ae, as_) in FAQ: ES_NEW[qe] = qs; ES_NEW[ae] = as_
 for pg in PAGES:
     for k in ('title','desc','h1','intro'):
@@ -205,7 +217,9 @@ def footer():
 
 def crumbs(pg):
     if not pg['slug']: return ''
-    return f'<nav class="crumbs wrap" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><span>{esc(pg["nav"][0])}</span></nav>'
+    mid = '<a href="/guides/">Guides</a><span aria-hidden="true">/</span>' if pg.get('kind') == 'guide' else ''
+    last = 'Guide' if pg.get('kind') == 'guide' else esc(pg["nav"][0])
+    return f'<nav class="crumbs wrap" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span>{mid}<span>{last}</span></nav>'
 
 def page_head(pg):
     return f'''<section class="phead">
@@ -231,6 +245,37 @@ def faq_html(items, heading=None, more=False):
     m = '<p class="note"><a href="/faq/">All questions</a></p>' if more else ''
     return f'<section class="block" id="faq"><div class="wrap">{h}<div class="faqs">{qs}</div>{m}</div></section>'
 
+def guide_card(g):
+    return (f'<a class="gcard" href="/guides/{g["slug"]}/"><span class="gimg"><img src="/img/{g["img"]}" alt="" loading="lazy" width="1400" height="652"></span>'
+            f'<span class="gbody"><h3>{esc(g["h1"][0])}</h3><p>{esc(g["desc"][0])}</p><span class="go">Read the guide</span></span></a>')
+
+def guides_section(exclude=None, heading='Guides for buyers'):
+    items = ''.join(guide_card(g) for g in GUIDES if g['slug'] != exclude)
+    return (f'<section class="block" id="guides"><div class="wrap"><div class="head"><div><p class="eyebrow">Guides</p><h2>{esc(heading)}</h2></div>'
+            f'<p class="lede">Planning your first order? These guides explain the steps, the programs and the fabrics.</p></div><div class="gcards">{items}</div></div></section>')
+
+def article_html(g, lang):
+    i = 0 if lang == 'en' else 1
+    rel = ''.join(f'<a href="/{p["slug"]}/">{esc(p["h1"][i] if p.get("h1") else p["nav"][i])}</a>' for sl in g['related'] for p in PAGES if p['slug'] == sl)
+    pub, upd = ('Published', 'Updated') if lang == 'en' else ('Publicado', 'Actualizado')
+    dates = f'<span>{pub} <time datetime="{g["published"]}">{g["published"]}</time></span>' + (f'<span>{upd} <time datetime="{g["updated"]}">{g["updated"]}</time></span>' if g['updated'] != g['published'] else '')
+    body = g['body'][i]
+    if lang == 'es': body = re.sub(r'href="/(?!/|img/|assets/)', 'href="/es/', body)
+    cta = (('Get a quote for your brand', 'Send your styles, fabrics and quantities and we reply with questions or a first quote.', 'Start your request', 'Related pages') if lang == 'en' else
+           ('Pida una cotización para su marca', 'Envíe sus modelos, telas y cantidades y le responderemos con preguntas o una primera cotización.', 'Iniciar su solicitud', 'Páginas relacionadas'))
+    if lang == 'es': rel = re.sub(r'href="/(?!/|img/|assets/)', 'href="/es/', rel)
+    return f'''<article class="article wrap">
+  <header class="ahead">
+    <h1>{esc(g["h1"][i])}</h1>
+    <p class="lede">{esc(g["lead"][i])}</p>
+    <p class="adates mono">{dates}</p>
+  </header>
+  <figure class="ahero"><img src="/img/{g["img"]}" alt="{esc(g["img_alt"][i])}" width="1400" height="652"></figure>
+  <div class="prose">{body}</div>
+  <aside class="acta"><h2>{cta[0]}</h2><p>{cta[1]}</p><p><a class="btn" href="#contact">{cta[2]}</a></p></aside>
+  <nav class="arel" aria-label="{cta[3]}"><p class="eyebrow">{cta[3]}</p>{rel}</nav>
+</article>'''
+
 CAT_FAQ = {'men': [0, 1, 4], 'women': [5, 6, 4], 'thermal': [2, 0, 8]}
 
 def body_for(pg):
@@ -254,13 +299,17 @@ def body_for(pg):
   <p class="note"><a class="btn ghost" href="/factory/">See every production stage</a></p>
 </div></section>'''
         return (chunk('<section class="hero">', '</section>') + '\n' + chunk('<div class="figures">', '</p></div>')
-                + '\n' + section('programs') + '\n' + catsec + '\n' + teaser + '\n' + section('process') + '\n' + section('compliance'))
+                + '\n' + section('programs') + '\n' + catsec + '\n' + teaser + '\n' + section('process') + '\n' + guides_section() + '\n' + section('compliance'))
     if s == 'factory':
         chain = section('factory')
         chain = re.sub(r'<div class="head">.*?<p class="lede">.*?</p>\s*</div>', '', chain, count=1, flags=re.S)  # page head replaces it
         return page_head(pg) + '\n' + chain + '\n' + section('materials') + '\n' + section('compliance')
     if s == 'faq':
-        return page_head(pg) + '\n' + faq_html(FAQ)
+        return page_head(pg) + '\n' + faq_html(FAQ) + '\n' + guides_section()
+    if s == 'guides':
+        return page_head(pg) + '\n<section class="block" id="guide-list"><div class="wrap"><div class="gcards">' + ''.join(guide_card(g) for g in GUIDES) + '</div></div></section>'
+    if pg.get('kind') == 'guide':
+        return '@@ARTICLE@@'
     cat = pg['cat']
     cards = ''.join(card(p) for p in P if p[0] == cat)
     cust = ''.join(f'<div><h3>{esc(a)}</h3><p>{esc(b)}</p></div>' for a, b in CUSTOM)
@@ -274,7 +323,7 @@ def body_for(pg):
   <div class="head"><div><p class="eyebrow">What you can change</p><h2>Make it yours.</h2></div></div>
   <div class="custom">{cust}</div>
 </div></section>
-''' + faq_html([FAQ[i] for i in CAT_FAQ[cat]], 'Questions about this category', more=True) + '\n' + section('programs'))
+''' + faq_html([FAQ[i] for i in CAT_FAQ[cat]], 'Questions about this category', more=True) + '\n' + guides_section() + '\n' + section('programs'))
 
 # ---------------------------------------------------------------- structured data
 ORG = {"@type": "Organization", "@id": SITE + "/#org", "name": "Lion Fashion", "legalName": "Shanghai Lion Industry Co., Ltd.",
@@ -289,7 +338,16 @@ def ld(pg, lang):
     g.append({"@type": "WebPage", "@id": absu(lang, pg['slug']) + "#page", "url": absu(lang, pg['slug']), "name": pg['title'][i],
               "description": pg['desc'][i], "inLanguage": lang, "isPartOf": {"@type": "WebSite", "name": "Lion Fashion", "url": SITE + "/"},
               "publisher": {"@id": SITE + "/#org"}})
-    if pg['slug']:
+    if pg.get('kind') == 'guide':
+        g[1]["@type"] = "WebPage"
+        g.append({"@type": "Article", "headline": pg['h1'][i], "description": pg['desc'][i], "inLanguage": lang,
+                  "image": SITE + '/img/' + pg['img'], "datePublished": pg['published'], "dateModified": pg['updated'],
+                  "author": {"@id": SITE + "/#org"}, "publisher": {"@id": SITE + "/#org"}, "mainEntityOfPage": absu(lang, pg['slug'])})
+        g.append({"@type": "BreadcrumbList", "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home" if lang == 'en' else "Inicio", "item": absu(lang, '')},
+            {"@type": "ListItem", "position": 2, "name": GUIDES_INDEX['nav'][i], "item": absu(lang, 'guides')},
+            {"@type": "ListItem", "position": 3, "name": pg['h1'][i], "item": absu(lang, pg['slug'])}]})
+    elif pg['slug']:
         g.append({"@type": "BreadcrumbList", "itemListElement": [
             {"@type": "ListItem", "position": 1, "name": "Home" if lang == 'en' else "Inicio", "item": absu(lang, '')},
             {"@type": "ListItem", "position": 2, "name": pg['nav'][i], "item": absu(lang, pg['slug'])}]})
@@ -298,6 +356,9 @@ def ld(pg, lang):
     elif pg.get('cat'): items = [FAQ[k] for k in CAT_FAQ[pg['cat']]]
     if items:
         g.append({"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": q[i], "acceptedAnswer": {"@type": "Answer", "text": a[i]}} for q, a in items]})
+    if pg['slug'] == 'guides':
+        g[1]["@type"] = "CollectionPage"
+        g.append({"@type": "ItemList", "itemListElement": [{"@type": "ListItem", "position": k + 1, "url": absu(lang, 'guides/' + x['slug']), "name": x['h1'][i]} for k, x in enumerate(GUIDES)]})
     if pg.get('cat'):
         g.append({"@type": "ItemList", "name": pg['h1'][i], "itemListElement": [
             {"@type": "ListItem", "position": k + 1, "name": p[3][i], "description": p[5][i], "image": SITE + f"/img/{p[2][0]}.jpg"}
@@ -320,7 +381,7 @@ def render(pg, lang):
 <link rel="alternate" hreflang="en" href="{absu('en', s)}">
 <link rel="alternate" hreflang="es" href="{absu('es', s)}">
 <link rel="alternate" hreflang="x-default" href="{absu('en', s)}">
-<meta property="og:type" content="website">
+<meta property="og:type" content="{'article' if pg.get('kind') == 'guide' else 'website'}">{f'<meta property="article:published_time" content="{pg["published"]}">' if pg.get('kind') == 'guide' else ''}
 <meta property="og:site_name" content="Lion Fashion">
 <meta property="og:locale" content="{'en_US' if lang=='en' else 'es_419'}">
 <meta property="og:title" content="{esc(pg["title"][i])}">
@@ -350,6 +411,8 @@ def render(pg, lang):
         body = translate(body)
         body = re.sub(r'href="/(?!/|img/|assets/|favicon)', 'href="/es/', body)
         body = re.sub(r'aria-label="Colorway (\d)"', r'aria-label="Color \1"', body)
+    if pg.get('kind') == 'guide':
+        body = body.replace('@@ARTICLE@@', article_html(pg, lang))
     body = body.replace('@@EN@@', url('en', s)).replace('@@ES@@', url('es', s))
     body = body.replace(f'data-l="{lang}"', f'data-l="{lang}" aria-current="true"')
     return head + '\n' + body
@@ -380,21 +443,31 @@ def main():
             pth = os.path.join(OUT, name)
             shutil.rmtree(pth) if os.path.isdir(pth) else os.remove(pth)
     v = TODAY.replace('-', '')
-    for pg in PAGES:
+    lm_path = os.path.join(SRC, 'lastmod.json')
+    lm = json.load(open(lm_path)) if os.path.exists(lm_path) else {}
+    lastmod = {}
+    for pg in PAGES + GUIDE_PAGES:
         for lang in ('en', 'es'):
-            d = os.path.join(OUT, *(['es'] if lang == 'es' else []), *( [pg['slug']] if pg['slug'] else []))
+            d = os.path.join(OUT, *(['es'] if lang == 'es' else []), *pg['slug'].split('/')) if pg['slug'] else os.path.join(OUT, *(['es'] if lang == 'es' else []))
             os.makedirs(d, exist_ok=True)
-            open(os.path.join(d, 'index.html'), 'w').write(render(pg, lang).replace('@@V@@', v))
+            htm = render(pg, lang)
+            # the sitemap date changes only when the page's own text changes
+            hsh = hashlib.sha1(re.sub(r'\?v=@@V@@', '', htm).encode()).hexdigest()[:16]
+            key = url(lang, pg['slug'])
+            prev = lm.get(key)
+            lastmod[key] = prev if prev and prev[0] == hsh else [hsh, TODAY]
+            open(os.path.join(d, 'index.html'), 'w').write(htm.replace('@@V@@', v))
+    json.dump(lastmod, open(lm_path, 'w'), indent=1, sort_keys=True)
     # 404
     nf = f'''<!doctype html><html lang="en" data-brand="champagne"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Page not found | Lion Fashion</title><meta name="robots" content="noindex"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Hanken+Grotesk:wght@400;600&display=swap"><link rel="stylesheet" href="/assets/site.css?v={v}"></head>
 <body>{header("").replace("@@EN@@", "/").replace("@@ES@@", "/es/").replace('href="#contact"', 'href="/#contact"')}<main class="wrap nf"><p class="eyebrow">404</p><h1>Page not found</h1><p class="lede">This page does not exist or has moved.</p><p><a class="btn" href="/">Go to the home page</a> <a class="btn ghost" href="/es/">Español</a></p></main>{footer()}</body></html>'''
     open(os.path.join(OUT, '404.html'), 'w').write(nf)
     # sitemap + robots
     rows = []
-    for pg in PAGES:
+    for pg in PAGES + GUIDE_PAGES:
         alts = ''.join(f'<xhtml:link rel="alternate" hreflang="{l}" href="{absu(l2, pg["slug"])}"/>' for l, l2 in (('en','en'),('es','es'),('x-default','en')))
         for lang in ('en', 'es'):
-            rows.append(f'  <url><loc>{absu(lang, pg["slug"])}</loc><lastmod>{TODAY}</lastmod>{alts}</url>')
+            rows.append(f'  <url><loc>{absu(lang, pg["slug"])}</loc><lastmod>{lastmod[url(lang, pg["slug"])][1]}</lastmod>{alts}</url>')
     open(os.path.join(OUT, 'sitemap.xml'), 'w').write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n' + '\n'.join(rows) + '\n</urlset>\n')
     open(os.path.join(OUT, 'robots.txt'), 'w').write(f'User-agent: *\nAllow: /\nSitemap: {SITE}/sitemap.xml\n')
     # wrangler config follows the domain
@@ -406,7 +479,7 @@ def main():
     }, indent=2) + '\n')
     if MISSING:
         print('Untranslated English text in Spanish pages:'); [print('  -', m) for m in MISSING]; sys.exit(1)
-    print(f'Built {len(PAGES)*2} pages for {SITE}')
+    print(f'Built {len(PAGES + GUIDE_PAGES)*2} pages for {SITE}')
 
 if __name__ == '__main__':
     main()
