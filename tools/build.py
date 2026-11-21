@@ -390,8 +390,9 @@ def render(pg, lang):
 <meta property="og:image" content="{og_img}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#1E1D21">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" sizes="192x192" href="/img/favicon-192.png">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<link rel="icon" type="image/png" href="/img/favicon.png">
 <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
 <script type="application/ld+json">{ld(pg, lang)}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -439,7 +440,7 @@ def translate(h):
 def main():
     if os.path.isdir(OUT):
         for name in os.listdir(OUT):
-            if name in ('img', 'assets', 'favicon.svg'): continue
+            if name in ('img', 'assets', 'favicon.svg', 'favicon.ico'): continue
             pth = os.path.join(OUT, name)
             shutil.rmtree(pth) if os.path.isdir(pth) else os.remove(pth)
     v = TODAY.replace('-', '')
@@ -459,7 +460,7 @@ def main():
             open(os.path.join(d, 'index.html'), 'w').write(htm.replace('@@V@@', v))
     json.dump(lastmod, open(lm_path, 'w'), indent=1, sort_keys=True)
     # 404
-    nf = f'''<!doctype html><html lang="en" data-brand="champagne"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Page not found | Lion Fashion</title><meta name="robots" content="noindex"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Hanken+Grotesk:wght@400;600&display=swap"><link rel="stylesheet" href="/assets/site.css?v={v}"></head>
+    nf = f'''<!doctype html><html lang="en" data-brand="champagne"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Page not found | Lion Fashion</title><meta name="robots" content="noindex"><link rel="icon" href="/favicon.ico" sizes="48x48"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Hanken+Grotesk:wght@400;600&display=swap"><link rel="stylesheet" href="/assets/site.css?v={v}"></head>
 <body>{header("").replace("@@EN@@", "/").replace("@@ES@@", "/es/").replace('href="#contact"', 'href="/#contact"')}<main class="wrap nf"><p class="eyebrow">404</p><h1>Page not found</h1><p class="lede">This page does not exist or has moved.</p><p><a class="btn" href="/">Go to the home page</a> <a class="btn ghost" href="/es/">Español</a></p></main>{footer()}</body></html>'''
     open(os.path.join(OUT, '404.html'), 'w').write(nf)
     # sitemap + robots
