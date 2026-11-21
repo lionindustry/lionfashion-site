@@ -443,7 +443,8 @@ def main():
             if name in ('img', 'assets', 'favicon.svg', 'favicon.ico'): continue
             pth = os.path.join(OUT, name)
             shutil.rmtree(pth) if os.path.isdir(pth) else os.remove(pth)
-    v = TODAY.replace('-', '')
+    # cache-busting tag for site.css/site.js: changes whenever either file changes
+    v = hashlib.sha1(open(os.path.join(OUT, 'assets', 'site.css'), 'rb').read() + open(os.path.join(OUT, 'assets', 'site.js'), 'rb').read()).hexdigest()[:8]
     lm_path = os.path.join(SRC, 'lastmod.json')
     lm = json.load(open(lm_path)) if os.path.exists(lm_path) else {}
     lastmod = {}
