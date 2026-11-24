@@ -118,7 +118,6 @@
 "Send your tech pack, a reference sample or the styles you picked from our library.": "Envíe su ficha técnica, una muestra de referencia o los modelos que eligió de nuestro catálogo.",
 "Quote in writing": "Cotización por escrito",
 "Fabric &amp; trims": "Telas y avíos",
-"We send swatches, lab dips and waistband options for approval.": "Enviamos muestras de tela, lab dips y opciones de elástico para su aprobación.",
 "Swatch cards": "Muestrarios",
 "Sampling": "Muestras",
 "Fit samples, then a pre-production sample in final fabric and labels.": "Muestras de ajuste y luego una muestra de preproducción con tela y etiquetas finales.",
@@ -157,7 +156,6 @@
 "Site": "Planta",
 "Monitoring ID": "ID de monitoreo",
 "Audit": "Auditoría",
-"Full monitoring, semi-announced, 19–21 Oct 2026": "Monitoreo completo, semianunciada, 19–21 oct. 2026",
 "QC teams covering cutting, sewing and finishing": "Equipos de control de calidad en corte, confección y acabado",
 "Inspection rounds on every order": "Rondas de inspección en cada pedido",
 "AQL for final inspection": "AQL en la inspección final",
@@ -186,12 +184,24 @@
 "Copy request": "Copiar solicitud",
 "To send by email, copy the request and paste it into a message to sales@lionfashionglobal.com.": "Para enviarla por correo, copie la solicitud y péguela en un mensaje a sales@lionfashionglobal.com.",
 "Production in Zhongshan, Guangdong, China": "Producción en Zhongshan, Guangdong, China",
-"Color theme": "Tema de color"
+"Color theme": "Tema de color",
+"We send swatches, color lab dips and waistband options for approval.": "Enviamos muestras de tela, pruebas de color y opciones de elástico para su aprobación.",
+"Completed 19–21 Oct 2026 (full monitoring, semi-announced)": "Realizada del 19 al 21 de octubre de 2026 (monitoreo completo, semianunciada)",
+"* Required. This button does not send anything yet: it writes your request so you can send it to us on WhatsApp or by email.": "* Obligatorio. Este botón todavía no envía nada: arma su solicitud para que nos la envíe por WhatsApp o por correo."
 },
 "PH": {
 "Brand or retailer": "Marca o minorista",
 "e.g. 3,000 pcs × 4 colors": "ej. 3.000 pzas × 4 colores",
 "e.g. March 2027": "ej. marzo 2027",
-"Styles you liked (e.g. ZY05), fabric, sizes, packaging, target price…": "Modelos que le interesan (ej. ZY05), tela, tallas, empaque, precio objetivo…"
+"Styles you liked (e.g. ZY05), fabric, sizes, packaging, target price…": "Modelos que le interesan (ej. ZY05), tela, tallas, empaque, precio objetivo…",
+"Sewing floor with an overhead hanging system carrying blue totes of cut pieces between workstations": "Planta de confección con un sistema aéreo que lleva cajas azules con piezas cortadas entre las estaciones de trabajo",
+"Long creel of white yarn cones feeding circular knitting machines": "Fileta larga de conos de hilo blanco que alimenta máquinas de tejido circular",
+"Red knitted fabric running through a finishing and compacting line": "Tela de punto roja pasando por una línea de acabado y compactado",
+"Automatic cutting table cutting nested underwear pattern pieces": "Mesa de corte automático cortando piezas de patrón de ropa interior",
+"Laser cutting gantry over a sheet of printed labels": "Pórtico de corte láser sobre una hoja de etiquetas impresas",
+"Rows of sewing operators with an overhead hanging line of blue totes": "Filas de operarias de costura con una línea aérea de cajas azules",
+"Close-up of a cover-stitch machine sewing white fabric": "Primer plano de una máquina recubridora cosiendo tela blanca",
+"Packing tables and racking of finished, bagged goods": "Mesas de empaque y estanterías con prendas terminadas y embolsadas",
+"OEKO-TEX Standard 100 certificate 2601022 for Zhongshan Ronghai Knitting Co., Ltd.": "Certificado OEKO-TEX Standard 100 n.º 2601022 de Zhongshan Ronghai Knitting Co., Ltd."
 }
 }

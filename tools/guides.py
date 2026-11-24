@@ -88,7 +88,7 @@ dict(
 </ul>
 
 <h2>4. Apruebe primero telas y colores</h2>
-<p>Pida muestras de tela y lab dips antes de cualquier muestra de prenda. Cambiar una tela o un tono en esta etapa cuesta mucho menos que después del muestreo. Revise la elasticidad y la recuperación, la opacidad en colores claros y el tacto de la tela después de lavarla.</p>
+<p>Pida muestras de tela y pruebas de color (lab dips) antes de cualquier muestra de prenda. Cambiar una tela o un tono en esta etapa cuesta mucho menos que después del muestreo. Revise la elasticidad y la recuperación, la opacidad en colores claros y el tacto de la tela después de lavarla.</p>
 
 <h2>5. Haga dos rondas de muestras: ajuste y preproducción</h2>
 <p>La muestra de ajuste confirma el patrón y las tallas; pruébela en personas reales en al menos dos tallas. La muestra de preproducción (PP) se fabrica con la tela final, su elástico y sus etiquetas, y se convierte en la referencia para la producción y la inspección. No inicie la producción sin aprobar la muestra PP.</p>
