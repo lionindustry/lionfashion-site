@@ -26,7 +26,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="/assets/site.css?v=d1033d6b">
+<link rel="stylesheet" href="/assets/site.css?v=1edf4e3e">
 </head>
 <body>
 <header class="top">
@@ -72,7 +72,7 @@
 </ul>
 
 <h2>4. Apruebe primero telas y colores</h2>
-<p>Pida muestras de tela y lab dips antes de cualquier muestra de prenda. Cambiar una tela o un tono en esta etapa cuesta mucho menos que después del muestreo. Revise la elasticidad y la recuperación, la opacidad en colores claros y el tacto de la tela después de lavarla.</p>
+<p>Pida muestras de tela y pruebas de color (lab dips) antes de cualquier muestra de prenda. Cambiar una tela o un tono en esta etapa cuesta mucho menos que después del muestreo. Revise la elasticidad y la recuperación, la opacidad en colores claros y el tacto de la tela después de lavarla.</p>
 
 <h2>5. Haga dos rondas de muestras: ajuste y preproducción</h2>
 <p>La muestra de ajuste confirma el patrón y las tallas; pruébela en personas reales en al menos dos tallas. La muestra de preproducción (PP) se fabrica con la tela final, su elástico y sus etiquetas, y se convierte en la referencia para la producción y la inspección. No inicie la producción sin aprobar la muestra PP.</p>
@@ -108,9 +108,9 @@
         </div>
       </div>
       <form id="rfq" novalidate>
-        <div class="f"><label for="q-co">Empresa</label><input id="q-co" name="company" autocomplete="organization" placeholder="Marca o minorista"></div>
+        <div class="f"><label for="q-co"><span>Empresa</span> <span class="req" aria-hidden="true">*</span></label><input id="q-co" aria-required="true" name="company" autocomplete="organization" placeholder="Marca o minorista"></div>
         <div class="f"><label for="q-name">Su nombre</label><input id="q-name" name="name" autocomplete="name"></div>
-        <div class="f"><label for="q-mail">Correo</label><input id="q-mail" name="email" type="email" autocomplete="email"></div>
+        <div class="f"><label for="q-mail"><span>Correo</span> <span class="req" aria-hidden="true">*</span></label><input id="q-mail" aria-required="true" name="email" type="email" autocomplete="email"></div>
         <div class="f"><label for="q-country">País</label><input id="q-country" name="country" autocomplete="country-name"></div>
         <div class="f full"><label>Programa</label>
           <div class="chips">
@@ -130,7 +130,7 @@
         <div class="f"><label for="q-qty">Cantidad por modelo</label><input id="q-qty" name="qty" placeholder="ej. 3.000 pzas × 4 colores"></div>
         <div class="f"><label for="q-date">Entrega deseada</label><input id="q-date" name="date" placeholder="ej. marzo 2027"></div>
         <div class="f full"><label for="q-msg">Detalles</label><textarea id="q-msg" name="msg" placeholder="Modelos que le interesan (ej. ZY05), tela, tallas, empaque, precio objetivo…"></textarea></div>
-        <div class="f full" style="flex-direction:row;flex-wrap:wrap;align-items:center;gap:12px"><button class="btn" type="submit">Preparar mi solicitud</button><span class="err" id="err" hidden></span></div>
+        <div class="f full" style="flex-direction:row;flex-wrap:wrap;align-items:center;gap:12px"><button class="btn" type="submit">Preparar mi solicitud</button><span class="err" id="err" hidden></span><p class="src hint" style="padding:0;flex-basis:100%">* Obligatorio. Este botón todavía no envía nada: arma su solicitud para que nos la envíe por WhatsApp o por correo.</p></div>
         <div class="out" id="out" hidden>
           <pre id="txt"></pre>
           <div class="acts">
@@ -150,6 +150,6 @@
     <div class="fcol"><p class="mono">sales@lionfashionglobal.com</p><p class="mono">WhatsApp +1 626 702 9043</p></div>
   </div>
 </footer>
-<script src="/assets/site.js?v=d1033d6b" defer></script>
+<script src="/assets/site.js?v=1edf4e3e" defer></script>
 </body>
 </html>
